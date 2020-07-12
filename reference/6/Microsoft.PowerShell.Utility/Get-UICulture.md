@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=2096535
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-uiculture?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-UICulture
 ---

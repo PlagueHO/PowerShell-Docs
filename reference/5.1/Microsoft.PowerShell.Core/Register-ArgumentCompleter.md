@@ -1,16 +1,18 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 5/20/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821507
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/register-argumentcompleter?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-ArgumentCompleter
 ---
+
 # Register-ArgumentCompleter
 
 ## SYNOPSIS
+
 Registers a custom argument completer.
 
 ## SYNTAX
@@ -18,14 +20,15 @@ Registers a custom argument completer.
 ### NativeSet
 
 ```
-Register-ArgumentCompleter -CommandName <String[]> -ScriptBlock <ScriptBlock> [-Native] [<CommonParameters>]
+Register-ArgumentCompleter -CommandName <String[]> -ScriptBlock <ScriptBlock> [-Native]
+ [<CommonParameters>]
 ```
 
 ### PowerShellSet
 
 ```
-Register-ArgumentCompleter [-CommandName <String[]>] -ParameterName <String> -ScriptBlock <ScriptBlock>
- [<CommonParameters>]
+Register-ArgumentCompleter [-CommandName <String[]>] -ParameterName <String>
+ -ScriptBlock <ScriptBlock> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -54,19 +57,19 @@ $scriptBlock = {
 Register-ArgumentCompleter -CommandName Set-TimeZone -ParameterName Id -ScriptBlock $scriptBlock
 ```
 
-The first command creates a script block which takes the required parameters which are passed
-in when the user presses `<TAB>`. For more information, see the **ScriptBlock** parameter
+The first command creates a script block which takes the required parameters which are passed in
+when the user presses <kbd>Tab</kbd>. For more information, see the **ScriptBlock** parameter
 description.
 
-Within the script block, the available values for **Id** are retrieved using the
-`Get-TimeZone` cmdlet. The **Id** property for each Time Zone is piped to the `Where-Object` cmdlet.
-The `Where-Object` cmdlet filters out any ids that do not start with the value provided by
-`$wordToComplete`, which represents the text the user typed before they pressed `<TAB>`. The
+Within the script block, the available values for **Id** are retrieved using the `Get-TimeZone`
+cmdlet. The **Id** property for each Time Zone is piped to the `Where-Object` cmdlet. The
+`Where-Object` cmdlet filters out any ids that do not start with the value provided by
+`$wordToComplete`, which represents the text the user typed before they pressed <kbd>Tab</kbd>. The
 filtered ids are piped to the `For-EachObject` cmdlet which encloses each value in quotes, should
 the value contain spaces.
 
 The second command registers the argument completer by passing the scriptblock, the
-**ParameterName** "Id" and the **CommandName** `Set-TimeZone`.
+**ParameterName** **Id** and the **CommandName** `Set-TimeZone`.
 
 ### Example 2: Add details to your tab completion values
 
@@ -76,19 +79,19 @@ cmdlet and only returns running services.
 ```powershell
 $s = {
     param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameters)
-    $services = Get-Service | Where-Object {$_.Status -eq "Running" }
-    $services | Where-Object { $_.Name -like "$wordToComplete*" } | ForEach-Object {
-        New-Object -Type System.Management.Automation.CompletionResult -ArgumentList $_,
-            $_,
+    $services = Get-Service | Where-Object {$_.Status -eq "Running" -and $_.Name -like "$wordToComplete*"}
+    $services | ForEach-Object {
+        New-Object -Type System.Management.Automation.CompletionResult -ArgumentList $_.Name,
+            $_.Name,
             "ParameterValue",
-            $_
+            $_.Name
     }
 }
-Register-ArgumentCompleter -CommandName dotnet -Native -ScriptBlock $s
+Register-ArgumentCompleter -CommandName Stop-Service -ParameterName Name -ScriptBlock $s
 ```
 
-The first command creates a script block which takes the required parameters which are passed
-in when the user presses `<TAB>`. For more information, see the **ScriptBlock** parameter
+The first command creates a script block which takes the required parameters which are passed in
+when the user presses <kbd>Tab</kbd>. For more information, see the **ScriptBlock** parameter
 description.
 
 Within the script block, the first command retrieves all running services using the `Where-Object`
@@ -102,10 +105,11 @@ The **CompletionResult** object allows you to provide additional details to each
 - **completionText** (String) - The text to be used as the auto completion result. This is the value
   sent to the command.
 - **listItemText** (String) - The text to be displayed in a list, such as when the user presses
-  `<Ctrl>+<Space>`. This is used for display only and is not passed to the command when selected.
+  <kbd>Ctrl</kbd>+<kbd>Space</kbd>. This is used for display only and is not passed to the command
+  when selected.
 - **resultType** ([CompletionResultType](/dotnet/api/system.management.automation.completionresulttype)) - The type of completion result.
 - **toolTip** (String) - The text for the tooltip with details to be displayed about the object.
-  This is visible when the user selects an item after pressing `<Ctrl>+<Space>`.
+  This is visible when the user selects an item after pressing <kbd>Ctrl</kbd>+<kbd>Space</kbd>.
 
 The last command demonstrates that stopped services can still be passed in manually to the
 `Stop-Service` cmdlet. The tab completion is the only aspect affected.
@@ -120,21 +124,21 @@ example adds tab-completion for the `dotnet` Command Line Interface (CLI).
 
 ```powershell
 $scriptblock = {
-     param($commandName, $wordToComplete, $cursorPosition)
-         dotnet complete --position $cursorPosition "$wordToComplete" | ForEach-Object {
+    param($wordToComplete, $commandAst, $cursorPosition)
+        dotnet complete --position $cursorPosition $commandAst.ToString() | ForEach-Object {
             [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
-         }
- }
+        }
+}
 Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock $scriptblock
 ```
 
-The first command creates a script block which takes the required parameters which are passed
-in when the user presses `<TAB>`. For more information, see the **ScriptBlock** parameter
+The first command creates a script block which takes the required parameters which are passed in
+when the user presses <kbd>Tab</kbd>. For more information, see the **ScriptBlock** parameter
 description.
 
 Within the script block, the `dotnet complete` command is used to perform the tab completion.
 The results are piped to the `ForEach-Object` cmdlet which use the **new** static method of the
-[`[System.Management.Automation.CompletionResult]`](/dotnet/api/system.management.automation.completionresult) class
+[System.Management.Automation.CompletionResult](/dotnet/api/system.management.automation.completionresult) class
 to create a new **CompletionResult** object for each value.
 
 ## PARAMETERS
@@ -144,14 +148,15 @@ to create a new **CompletionResult** object for each value.
 Specifies the name of the commands as an array.
 
 ```yaml
-Accept pipeline input: False
-Position: Named
-Accept wildcard characters: False
+Type: System.String[]
 Parameter Sets: NativeSet, PowerShellSet
-Required: True (NativeSet), False (PowerShellSet)
-Default value: None
 Aliases:
-Type: String[]
+
+Required: True (NativeSet), False (PowerShellSet)
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### -Native
@@ -160,7 +165,7 @@ Indicates that the argument completer is for a native command where PowerShell c
 parameter names.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NativeSet
 Aliases:
 
@@ -179,7 +184,7 @@ cannot be an enumerated value, such as the **ForegroundColor** parameter of the 
 For more information on enums, see [about_Enum](./About/about_Enum.md).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellSet
 Aliases:
 
@@ -193,44 +198,45 @@ Accept wildcard characters: False
 ### -ScriptBlock
 
 Specifies the commands to run to perform tab completion. The script block you provide should return
-the values complete the input. The script block must unroll the values using the pipeline
+the values that complete the input. The script block must unroll the values using the pipeline
 (`ForEach-Object`, `Where-Object`, etc.), or another suitable method. Returning an array of values
 causes PowerShell to treat the entire array as **one** tab completion value.
 
-The script block should also accept the following parameters in the order specified below. The names
-of the parameters are not important because PowerShell passes in the values *positionally*.
+The script block must accept the following parameters in the order specified below. The names of the
+parameters aren't important because PowerShell passes in the values by position.
 
 - `$commandName` (Position 0) - This parameter is set to the name of the
   command for which the script block is providing tab completion.
 - `$parameterName` (Position 1) - This parameter is set to the parameter
   whose value requires tab completion.
-- `$wordToComplete` (Position 2) - This parameter is set to value the user has
-  provided before they pressed `<TAB>`. Your script block should use this value
-  to determine tab completion values.
+- `$wordToComplete` (Position 2) - This parameter is set to value the user has provided before they
+  pressed <kbd>Tab</kbd>. Your script block should use this value to determine tab completion
+  values.
 - `$commandAst` (Position 3) - This parameter is set to the Abstract Syntax
   Tree (AST) for the current input line. For more information, see
   [Ast Class](/dotnet/api/system.management.automation.language.ast).
-- `$fakeBoundParameter` (Position 4) - This parameter is set to a hashtable
-  containing the `$PSBoundParameters` for the cmdlet, before the user pressed
-  `<TAB>`. For more information, see [about_Automatic_Variables](./About/about_Automatic_Variables.md).
+- `$fakeBoundParameters` (Position 4) - This parameter is set to a hashtable containing the
+  `$PSBoundParameters` for the cmdlet, before the user pressed <kbd>Tab</kbd>. For more information,
+  see [about_Automatic_Variables](./About/about_Automatic_Variables.md).
 
-When you specify the **Native** parameter, the script block should take the following parameters in
-the specified order. The names of the parameters are not important because PowerShell
-passes in the values *positionally*.
+When you specify the **Native** parameter, the script block must take the following parameters in
+the specified order. The names of the parameters aren't important because PowerShell passes in the
+values by position.
 
-- `$commandName` (Position 0) - This parameter is set to the name of the
-  command for which the script block is providing tab completion.
-- `$wordToComplete` (Position 1) - This parameter is set to value the user has
-  provided before they pressed `<TAB>`. Your script block should use this value
-  to determine tab completion values.
-- `$cursorPosition` (Position 2) - This parameter is set to the position of the cursor when the
-  user pressed `<TAB>`.
+- `$wordToComplete` (Position 0) - This parameter is set to value the user has provided before they
+  pressed <kbd>Tab</kbd>. Your script block should use this value to determine tab completion
+  values.
+- `$commandAst` (Position 1) - This parameter is set to the Abstract Syntax
+  Tree (AST) for the current input line. For more information, see
+  [Ast Class](/dotnet/api/system.management.automation.language.ast).
+- `$cursorPosition` (Position 2) - This parameter is set to the position of the cursor when the user
+  pressed <kbd>Tab</kbd>.
 
 You can also provide an **ArgumentCompleter** as a parameter attribute. For more information, see
 [about_Functions_Advanced_Parameters](./About/about_Functions_Advanced_Parameters.md).
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: (All)
 Aliases:
 

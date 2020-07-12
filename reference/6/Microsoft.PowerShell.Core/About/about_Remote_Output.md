@@ -1,9 +1,10 @@
 ---
-ms.date:  12/01/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Remote_Output
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 12/01/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_output?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Remote_Output
 ---
 # About Remote Output
 
@@ -205,12 +206,12 @@ computers are interspersed.
 
 [about_Remote_Variables](about_Remote_Variables.md)
 
-[Format-Table](../../Microsoft.PowerShell.Utility/Format-Table.md)
+[Format-Table](xref:Microsoft.PowerShell.Utility.Format-Table)
 
-[Get-Process](../../Microsoft.PowerShell.Management/Get-Process.md)
+[Get-Process](xref:Microsoft.PowerShell.Management.Get-Process)
 
-[Get-Service](../../Microsoft.PowerShell.Management/Get-Service.md)
+[Get-Service](xref:Microsoft.PowerShell.Management.Get-Service)
 
-[Invoke-Command](../Invoke-Command.md)
+[Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
 
-[Select-Object](../../Microsoft.PowerShell.Utility/Select-Object.md)
+[Select-Object](xref:Microsoft.PowerShell.Utility.Select-Object)

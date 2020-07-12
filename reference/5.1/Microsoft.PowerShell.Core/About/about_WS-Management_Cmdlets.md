@@ -1,9 +1,10 @@
 ---
-ms.date:  01/04/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_WS Management_Cmdlets
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 01/04/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_WS Management_Cmdlets
 ---
 
 # About WS-Management Cmdlets
@@ -154,26 +155,26 @@ MSDN (Microsoft Developer Network) library.
 
 ## SEE ALSO
 
-[Connect-WSMan](../../Microsoft.WSMan.Management/Connect-WSMan.md)
+[Connect-WSMan](xref:Microsoft.WSMan.Management.Connect-WSMan)
 
-[Disable-WSManCredSSP](../../Microsoft.WSMan.Management/Disable-WSManCredSSP.md)
+[Disable-WSManCredSSP](xref:Microsoft.WSMan.Management.Disable-WSManCredSSP)
 
-[Disconnect-WSMan](../../Microsoft.WSMan.Management/Disconnect-WSMan.md)
+[Disconnect-WSMan](xref:Microsoft.WSMan.Management.Disconnect-WSMan)
 
-[Enable-WSManCredSSP](../../Microsoft.WSMan.Management/Enable-WSManCredSSP.md)
+[Enable-WSManCredSSP](xref:Microsoft.WSMan.Management.Enable-WSManCredSSP)
 
-[Get-WSManCredSSP](../../Microsoft.WSMan.Management/Get-WSManCredSSP.md)
+[Get-WSManCredSSP](xref:Microsoft.WSMan.Management.Get-WSManCredSSP)
 
-[Get-WSManInstance](../../Microsoft.WSMan.Management/Get-WSManInstance.md)
+[Get-WSManInstance](xref:Microsoft.WSMan.Management.Get-WSManInstance)
 
-[Invoke-WSManAction](../../Microsoft.WSMan.Management/Invoke-WSManAction.md)
+[Invoke-WSManAction](xref:Microsoft.WSMan.Management.Invoke-WSManAction)
 
-[New-WSManInstance](../../Microsoft.WSMan.Management/New-WSManInstance.md)
+[New-WSManInstance](xref:Microsoft.WSMan.Management.New-WSManInstance)
 
-[Remove-WSManInstance](../../Microsoft.WSMan.Management/Remove-WSManInstance.md)
+[Remove-WSManInstance](xref:Microsoft.WSMan.Management.Remove-WSManInstance)
 
-[Set-WSManInstance](../../Microsoft.WSMan.Management/Set-WSManInstance.md)
+[Set-WSManInstance](xref:Microsoft.WSMan.Management.Set-WSManInstance)
 
-[Set-WSManQuickConfig](../../Microsoft.WSMan.Management/Set-WSManQuickConfig.md)
+[Set-WSManQuickConfig](xref:Microsoft.WSMan.Management.Set-WSManQuickConfig)
 
-[Test-WSMan](../../Microsoft.WSMan.Management/Test-WSMan.md)
+[Test-WSMan](xref:Microsoft.WSMan.Management.Test-WSMan)

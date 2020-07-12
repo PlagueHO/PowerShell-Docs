@@ -1,8 +1,9 @@
 ---
-ms.date: 12/09/2017
-schema: 2.0.0
-locale: en-us
 keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 12/09/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
 title: about_Session_Configurations
 ---
 # About Session Configurations
@@ -193,6 +194,7 @@ session configurations to allow remote access.
 
 To enable remote access to the session configurations on the computer, use the
 Enable-PSRemoting cmdlet. This cmdlet creates two session configurations:
+
 - with the name defined as: "PowerShell." + "current PowerShell version"
 - with name "PowerShell.6", untied to any specific PowerShell version.
 
@@ -338,20 +340,20 @@ about_SessionConfigurations
 
 [about_Session_Configuration_Files](about_Session_Configuration_Files.md)
 
-[New-PSSession](../New-PSSession.md)
+[New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
 
-[Disable-PSSessionConfiguration](../Disable-PSSessionConfiguration.md)
+[Disable-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Disable-PSSessionConfiguration)
 
-[Enable-PSSessionConfiguration](../Enable-PSSessionConfiguration.md)
+[Enable-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Enable-PSSessionConfiguration)
 
-[Get-PSSessionConfiguration](../Get-PSSessionConfiguration.md)
+[Get-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Get-PSSessionConfiguration)
 
-[New-PSSessionConfigurationFile](../New-PSSessionConfigurationFile.md)
+[New-PSSessionConfigurationFile](xref:Microsoft.PowerShell.Core.New-PSSessionConfigurationFile)
 
-[Register-PSSessionConfiguration](../Register-PSSessionConfiguration.md)
+[Register-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Register-PSSessionConfiguration)
 
-[Set-PSSessionConfiguration](../Set-PSSessionConfiguration.md)
+[Set-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Set-PSSessionConfiguration)
 
-[Test-PSSessionConfigurationFile](../Test-PSSessionConfigurationFile.md)
+[Test-PSSessionConfigurationFile](xref:Microsoft.PowerShell.Core.Test-PSSessionConfigurationFile)
 
-[Unregister-PSSessionConfiguration](../Unregister-PSSessionConfiguration.md)
+[Unregister-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Unregister-PSSessionConfiguration)

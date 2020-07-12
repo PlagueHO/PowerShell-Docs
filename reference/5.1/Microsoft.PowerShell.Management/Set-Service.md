@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 07/17/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821633
+ms.date: 10/25/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Service
 ---
@@ -164,7 +164,7 @@ This parameter doesn't rely on PowerShell remoting. You can use the **ComputerNa
 if your computer isn't configured to run remote commands.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: cn
 
@@ -180,7 +180,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running `Set-Service`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -200,7 +200,7 @@ property of the `Get-Service` **ServiceController** object. To see the service d
 `Get-CimInstance` that returns a **Win32_Service** object that represents the service.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 Specifies a new display name for the service.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: DN
 
@@ -234,7 +234,7 @@ that contains the object, or type a command or expression that gets the object, 
 `Get-Service` command. You can use the pipeline to send a service object to `Set-Service`.
 
 ```yaml
-Type: ServiceController
+Type: System.ServiceProcess.ServiceController
 Parameter Sets: InputObject
 Aliases:
 
@@ -251,7 +251,7 @@ Specifies the service name of the service to be changed. Wildcard characters are
 can use the pipeline to send a service name to `Set-Service`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Name
 Aliases: ServiceName, SN
 
@@ -268,7 +268,7 @@ Returns a **ServiceController** object that represents the services that were ch
 `Set-Service` doesn't generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -281,23 +281,30 @@ Accept wildcard characters: False
 
 ### -StartupType
 
-Specifies the start mode of the service.
+Sets the startup type of the service. The acceptable values for this parameter are:
 
-The acceptable values for this parameter are as follows:
+- **Automatic** - The service is started or was started by the operating system, at system start-up.
+  If an automatically started service depends on a manually started service, the manually started
+  service is also started automatically at system startup.
+- **Disabled** - The service is disabled and cannot be started by a user or application.
+- **Manual** - The service is started only manually, by a user, using the Service Control Manager,
+  or by an application.
+- **Boot** - Indicates that the service is a device driver started by the system loader. This
+  value is valid only for device drivers.
+- **System** - Indicates that the service is a device driver started by the 'IOInitSystem()'
+  function. This value is valid only for device drivers.
 
-- **Automatic**. Starts when the system starts.
-- **Disabled**. Service can't be started.
-- **Manual**. Starts only when started by a user or program.
+ The default value is **Automatic**.
 
 ```yaml
-Type: ServiceStartMode
+Type: System.ServiceProcess.ServiceStartMode
 Parameter Sets: (All)
 Aliases: StartMode, SM, ST
-Accepted values: Automatic, Boot, Disabled, Manual, System
+Accepted values: Boot, System, Automatic, Manual, Disabled
 
 Required: False
 Position: Named
-Default value: None
+Default value: Automatic
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -313,7 +320,7 @@ The acceptable values for this parameter are as follows:
 - **Stopped**. Stops the service.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Paused, Running, Stopped
@@ -330,7 +337,7 @@ Accept wildcard characters: False
 Shows what would happen if `Set-Service` runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

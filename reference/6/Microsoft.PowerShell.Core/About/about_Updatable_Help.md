@@ -1,9 +1,10 @@
 ---
-ms.date:  01/03/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Updatable_Help
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 01/03/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_updatable_help?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Updatable_Help
 ---
 # About Updatable Help
 
@@ -441,7 +442,7 @@ contain at least one file whose base name is the same as the directory name).
 
 If you author a module, you can support online help and Updatable Help for
 your modules. For more information, see "Supporting Updatable Help" and
-[Supporting Online Help](/powershell/developer/module/supporting-online-help) in the Microsoft Docs.
+[Supporting Online Help](/powershell/scripting/developer/module/supporting-online-help) in the Microsoft Docs.
 
 Updatable help not available for PowerShell snap-ins or comment-based help.
 
@@ -452,8 +453,8 @@ Preinstallation Environment (Windows PE).
 
 ## SEE ALSO
 
-[Get-Help](../Get-Help.md)
+[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help)
 
-[Save-Help](../Save-Help.md)
+[Save-Help](xref:Microsoft.PowerShell.Core.Save-Help)
 
-[Update-Help](../Update-Help.md)
+[Update-Help](xref:Microsoft.PowerShell.Core.Update-Help)

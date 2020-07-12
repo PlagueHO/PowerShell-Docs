@@ -1,9 +1,9 @@
 ---
 external help file: PSDiagnostics-help.xml
 Module Name: PSDiagnostics
-online version:
-schema: 2.0.0
 ms.date: 11/27/2018
+online version: https://docs.microsoft.com/powershell/module/psdiagnostics/set-logproperties?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
 title: Set-LogProperties
 ---
 
@@ -96,7 +96,7 @@ configuration.
 
 ## OUTPUTS
 
-### None
+### System.Object
 
 ## NOTES
 
@@ -109,4 +109,3 @@ You must run this cmdlet from an elevated PowerShell session.
 [Enable-PSTrace](Enable-PSTrace.md)
 
 [Disable-PSTrace](Disable-PSTrace.md)
-

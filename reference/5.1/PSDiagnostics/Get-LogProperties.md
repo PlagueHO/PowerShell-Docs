@@ -1,9 +1,9 @@
 ---
 external help file: PSDiagnostics-help.xml
 Module Name: PSDiagnostics
-online version:
-schema: 2.0.0
 ms.date: 11/27/2018
+online version: https://docs.microsoft.com/powershell/module/psdiagnostics/get-logproperties?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
 title: Get-LogProperties
 ---
 # Get-LogProperties
@@ -46,7 +46,7 @@ MaxLogSize : 15728640
 The name of the event provider.
 
 ```yaml
-Type: System.String
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -66,7 +66,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String
+### System.Object
 
 ## OUTPUTS
 
@@ -84,4 +84,3 @@ The **PSDiagnostics** module adds the **LogDetails** class to the
 [Enable-PSTrace](Enable-PSTrace.md)
 
 [Disable-PSTrace](Disable-PSTrace.md)
-

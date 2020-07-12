@@ -1,9 +1,9 @@
 ---
 external help file: PSDiagnostics-help.xml
 Module Name: PSDiagnostics
-online version: https://go.microsoft.com/fwlink/?linkid=2096859
-schema: 2.0.0
 ms.date: 11/27/2018
+online version: https://docs.microsoft.com/powershell/module/psdiagnostics/get-logproperties?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
 title: Get-LogProperties
 ---
 # Get-LogProperties
@@ -14,7 +14,7 @@ Retrieves the properties of a Windows event log.
 ## SYNTAX
 
 ```
-Get-LogProperties [-Name] <string> [<CommonParameters>]
+Get-LogProperties [-Name] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,7 +46,7 @@ MaxLogSize : 15728640
 The name of the event provider.
 
 ```yaml
-Type: System.String
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -84,4 +84,3 @@ The **PSDiagnostics** module adds the **LogDetails** class to the
 [Enable-PSTrace](Enable-PSTrace.md)
 
 [Disable-PSTrace](Disable-PSTrace.md)
-

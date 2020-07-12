@@ -1,9 +1,9 @@
 ---
 external help file: PSDiagnostics-help.xml
 Module Name: PSDiagnostics
-online version: https://go.microsoft.com/fwlink/?linkid=2096464
-schema: 2.0.0
 ms.date: 11/27/2018
+online version: https://docs.microsoft.com/powershell/module/psdiagnostics/enable-pstrace?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
 title: Enable-PSTrace
 ---
 # Enable-PSTrace
@@ -14,7 +14,7 @@ Enables the Microsoft-Windows-PowerShell event provider logs.
 ## SYNTAX
 
 ```
-Enable-PSTrace [-Force] [-AnalyticOnly]
+Enable-PSTrace [-Force] [-AnalyticOnly] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -69,6 +69,9 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

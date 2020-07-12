@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 12/19/2018
-online version: https://go.microsoft.com/fwlink/?linkid=2096836
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-wide?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-Wide
 ---
@@ -83,7 +83,7 @@ column size and number are determined by the view. You cannot use the **AutoSize
 parameters in the same command.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -100,7 +100,7 @@ Specifies the number of columns in the display. You cannot use the **AutoSize** 
 parameters in the same command.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -118,7 +118,7 @@ aid when you are formatting expressions in a `Format-Wide` command, and the expr
 appear to be working.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -143,7 +143,7 @@ Valid values are:
   collection.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: CoreOnly, EnumOnly, Both
@@ -163,7 +163,7 @@ attribute or create directories to complete a file path, but it will not attempt
 permissions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -187,7 +187,7 @@ property, use a hash table. The acceptable values for this parameter are:
 - FormatString \<string\>
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -204,7 +204,7 @@ Specifies the objects to format. Enter a variable that contains the objects, or 
 expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -231,7 +231,7 @@ property, use a hash table. Valid keys are:
 - FormatString \<string\>
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -249,7 +249,7 @@ aid when you are formatting expressions in a `Format-Wide` command, and the expr
 appear to be working.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -266,7 +266,7 @@ Specifies the name of an alternate table format or view. You cannot use the **Pr
 **View** parameters in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -320,4 +320,3 @@ nor a table, use Format-Custom.
 [Format-List](Format-List.md)
 
 [Format-Table](Format-Table.md)
-

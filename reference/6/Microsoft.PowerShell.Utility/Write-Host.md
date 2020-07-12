@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 11/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=2096982
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-host?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Host
 ---
@@ -135,7 +135,7 @@ The acceptable values for this parameter are:
 - White
 
 ```yaml
-Type: ConsoleColor
+Type: System.ConsoleColor
 Parameter Sets: (All)
 Aliases:
 Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
@@ -171,7 +171,7 @@ The acceptable values for this parameter are:
 - White
 
 ```yaml
-Type: ConsoleColor
+Type: System.ConsoleColor
 Parameter Sets: (All)
 Aliases:
 Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
@@ -190,7 +190,7 @@ No spaces or newlines are inserted between the output strings.
 No newline is added after the last output string.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -206,9 +206,9 @@ Accept wildcard characters: False
 Objects to display in the host.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
-Aliases:
+Aliases: Msg, Message
 
 Required: False
 Position: 0
@@ -222,7 +222,7 @@ Accept wildcard characters: False
 Specifies a separator string to insert between objects displayed by the host.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -254,7 +254,7 @@ However, the host might display the objects that `Write-Host` sends to it.
 
 ## RELATED LINKS
 
-[Clear-Host](../Microsoft.PowerShell.Core/Functions/Clear-Host.md)
+[Clear-Host](../Microsoft.PowerShell.Core/Clear-Host.md)
 
 [Out-Host](../Microsoft.PowerShell.Core/Out-Host.md)
 
@@ -269,5 +269,3 @@ However, the host might display the objects that `Write-Host` sends to it.
 [Write-Verbose](Write-Verbose.md)
 
 [Write-Warning](Write-Warning.md)
-
-

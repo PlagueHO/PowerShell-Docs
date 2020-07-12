@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 12/19/2018
-online version: https://go.microsoft.com/fwlink/?linkid=821774
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-list?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-List
 ---
@@ -81,7 +81,7 @@ Get-Process winlogon | Format-List -Property *
 
 It uses the Get-Process cmdlet to get an object representing the Winlogon process. The pipeline
 operator (|) passes the Winlogon process object through the pipeline to `Format-List`. The command
-uses the *Property* parameter to specify the properties and the * to indicate all properties.
+uses the *Property* parameter to specify the properties and the \* to indicate all properties.
 Because the name of the *Property* parameter is optional, you can omit it and type the command as
 `Format-List *`. `Format-List` automatically sends the results to the default output cmdlet for
 display.
@@ -116,7 +116,7 @@ can be used as a debugging aid when you are formatting expressions in a `Format-
 the expressions do not appear to be working.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -139,7 +139,7 @@ default value is EnumOnly. The acceptable values for this parameter are:
   collection.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: CoreOnly, EnumOnly, Both
@@ -158,7 +158,7 @@ Indicates that this cmdlet displays all of the error information. Use with the *
 streams, only some of the error information is displayed.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -182,7 +182,7 @@ property, use a hash table. Valid keys are:
 - FormatString \<string\>
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -199,7 +199,7 @@ Specifies the objects to be formatted. Enter a variable that contains the object
 or expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -227,7 +227,7 @@ property, use a hash table. Valid keys are:
 - FormatString \<string\>
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -245,7 +245,7 @@ be used as a debugging aid when you are formatting expressions in a `Format-List
 expressions do not appear to be working.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -262,7 +262,7 @@ Specifies the name of an alternate list format or view. You cannot use the **Pro
 **View** parameters in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -324,4 +324,3 @@ a table, use `Format-Custom`.
 [Format-Table](Format-Table.md)
 
 [Format-Wide](Format-Wide.md)
-

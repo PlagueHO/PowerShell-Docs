@@ -1,9 +1,10 @@
 ---
-ms.date: 05/20/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Functions_Advanced_Parameters
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 06/24/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Functions_Advanced_Parameters
 ---
 
 # About Functions Advanced Parameters
@@ -25,7 +26,84 @@ parameters, see [about_CommonParameters](about_CommonParameters.md).
 
 Beginning in PowerShell 3.0, you can use splatting with `@Args` to represent
 the parameters in a command. Splatting is valid on simple and advanced
-functions. For more information, see [about_Functions](about_Functions.md) and [about_Splatting](about_Splatting.md).
+functions. For more information, see [about_Functions](about_Functions.md) and
+[about_Splatting](about_Splatting.md).
+
+## Type conversion of parameter values
+
+When you supply strings as arguments to parameters that expect a different
+type, PowerShell implicitly converts the strings to the parameter target type.
+Advanced functions perform culture-invariant parsing of parameter values.
+
+By contrast, a culture-sensitive conversion is performed during parameter
+binding for compiled cmdlets.
+
+In this example, we create a cmdlet and a script function that take a
+`[datetime]` parameter. The current culture is changed to use German settings.
+A German-formatted date is passed to the parameter.
+
+```powershell
+# Create a cmdlet that accepts a [datetime] argument.
+Add-Type @'
+  using System;
+  using System.Management.Automation;
+  [Cmdlet("Get", "Date_Cmdlet")]
+  public class GetFooCmdlet : Cmdlet {
+
+    [Parameter(Position=0)]
+    public DateTime Date { get; set; }
+
+    protected override void ProcessRecord() {
+      WriteObject(Date);
+    }
+  }
+'@ -PassThru | % Assembly | Import-Module
+
+[cultureinfo]::CurrentCulture = 'de-DE'
+$dateStr = '19-06-2018'
+
+Get-Date_Cmdlet $dateStr
+```
+
+```Output
+Dienstag, 19. Juni 2018 00:00:00
+```
+
+As shown above, cmdlets use culture-sensitive parsing to convert the string.
+
+```powershell
+# Define an equivalent function.
+function Get-Date_Func {
+  param(
+    [DateTime] $Date
+  )
+  process {
+    $Date
+  }
+}
+
+[cultureinfo]::CurrentCulture = 'de-DE'
+
+# This German-format date string doesn't work with the invariant culture.
+# E.g., [datetime] '19-06-2018' breaks.
+$dateStr = '19-06-2018'
+
+Get-Date_Func $dateStr
+```
+
+Advanced functions use culture-invariant parsing, which results in the
+following error.
+
+```Output
+Get-Date_Func : Cannot process argument transformation on parameter 'Date'. Cannot convert
+ value "19-06-2018" to type "System.DateTime". Error: "String was not recognized as a valid
+ DateTime."
+At line:13 char:15
++ Get-Date_Func $dateStr
++               ~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Date_Func], ParameterBindingArgumentTransformationException
+    + FullyQualifiedErrorId : ParameterArgumentTransformationError,Get-Date_Func
+```
 
 ## Static parameters
 
@@ -94,6 +172,23 @@ Param(
 )
 ```
 
+The boolean argument types of the **Parameter** attribute default to **False**
+when omitted from the **Parameter** attribute. Set the argument value to
+`$true` or just list the argument by name. For example, the following
+**Parameter** attributes are equivalent.
+
+```powershell
+Param(
+    [Parameter(Mandatory=$true)]
+)
+
+# Boolean arguments can be defined using this shorthand syntax
+
+Param(
+    [Parameter(Mandatory)]
+)
+```
+
 If you use the **Parameter** attribute without arguments, as an alternative to
 using the **CmdletBinding** attribute, the parentheses that follow the
 attribute name are still required.
@@ -105,7 +200,7 @@ Param(
 )
 ```
 
-### Mandatory argument
+#### Mandatory argument
 
 The `Mandatory` argument indicates that the parameter is required. If this
 argument isn't specified, the parameter is optional.
@@ -121,7 +216,7 @@ Param(
 )
 ```
 
-### Position argument
+#### Position argument
 
 The `Position` argument determines whether the parameter name is required when
 the parameter is used in a command. When a parameter declaration includes the
@@ -137,10 +232,9 @@ By default, all function parameters are positional. PowerShell assigns position
 numbers to parameters in the order in which the parameters are declared in the
 function. To disable this feature, set the value of the `PositionalBinding`
 argument of the **CmdletBinding** attribute to `$False`. The `Position`
-argument takes precedence over the value of the `PositionalBinding` argument
-for the parameters on which it's declared. For more information, see
-`PositionalBinding` in
-[about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md).
+argument takes precedence over the value of the `PositionalBinding` argument of
+the **CmdletBinding** attribute. For more information, see `PositionalBinding`
+in [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md).
 
 The value of the `Position` argument is specified as an integer. A position
 value of **0** represents the first position in the command, a position value
@@ -164,14 +258,7 @@ Param(
 )
 ```
 
-> [!NOTE]
-> When the `Get-Help` cmdlet displays the corresponding **Position** parameter
-> attribute, the position value is incremented by one.
->
-> For example, a parameter with a `Position` argument value of **0** has a
-> parameter attribute of **Position=1**.
-
-### ParameterSetName argument
+#### ParameterSetName argument
 
 The `ParameterSetName` argument specifies the parameter set to which a
 parameter belongs. If no parameter set is specified, the parameter belongs to
@@ -232,9 +319,9 @@ Param(
 )
 ```
 
-For more information about parameter sets, see [Cmdlet Parameter Sets](/powershell/developer/cmdlet/cmdlet-parameter-sets).
+For more information about parameter sets, see [About Parameter Sets](about_parameter_sets.md).
 
-### ValueFromPipeline argument
+#### ValueFromPipeline argument
 
 The `ValueFromPipeline` argument indicates that the parameter accepts input
 from a pipeline object. Specify this argument if the function accepts the
@@ -252,7 +339,7 @@ Param(
 )
 ```
 
-### ValueFromPipelineByPropertyName argument
+#### ValueFromPipelineByPropertyName argument
 
 The `ValueFromPipelineByPropertyName` argument indicates that the parameter
 accepts input from a property of a pipeline object. The object property must
@@ -277,18 +364,17 @@ Param(
 
 > [!NOTE]
 > A typed parameter that accepts pipeline input (`by Value`) or
-> (`by PropertyName`) enables use of **delay-bind** script blocks on the
+> (`by PropertyName`) enables use of _delay-bind_ script blocks on the
 > parameter.
 >
-> The **delay-bind** script block is run automatically during
+> The _delay-bind_ script block is run automatically during
 > **ParameterBinding**. The result is bound to the parameter. Delay binding
-> **does not** work for parameters defined as type `ScriptBlock` or
-> `System.Object`, the script block is passed through **without** being
-> invoked.
+> does not work for parameters defined as type `ScriptBlock` or
+> `System.Object`. The script block is passed through _without_ being invoked.
 >
-> You can read about **delay-bind** script blocks here [about_Script_Blocks.md](about_Script_Blocks.md).
+> You can read about _delay-bind_ script blocks here [about_Script_Blocks.md](about_Script_Blocks.md).
 
-### ValueFromRemainingArguments argument
+#### ValueFromRemainingArguments argument
 
 The `ValueFromRemainingArguments` argument indicates that the parameter accepts
 all the parameter's values in the command that aren't assigned to other
@@ -327,7 +413,7 @@ Found 2 elements
 > Prior to PowerShell 6.2, the **ValueFromRemainingArguments** collection was
 > joined as single entity under index **0**.
 
-### HelpMessage argument
+#### HelpMessage argument
 
 The `HelpMessage` argument specifies a string that contains a brief description
 of the parameter or its value. PowerShell displays this message in the prompt
@@ -336,6 +422,11 @@ argument has no effect on optional parameters.
 
 The following example declares a mandatory **ComputerName** parameter and a
 help message that explains the expected parameter value.
+
+If there is no other [comment-based help](./about_comment_based_help.md) syntax
+for the function (for example, `.SYNOPSIS`) then this message also shows up in
+`Get-Help` output.
+
 
 ```powershell
 Param(
@@ -554,12 +645,18 @@ than or equal to the current date and time.
 [DateTime][ValidateScript({$_ -ge (Get-Date)})]$date = (Get-Date)
 ```
 
+> [!NOTE]
+> If you use **ValidateScript**, you cannot pass a `$null` value to the
+> parameter. When you pass a null value **ValidateScript** can't validate the
+> argument.
+
 ### ValidateSet attribute
 
 The **ValidateSet** attribute specifies a set of valid values for a parameter
-or variable. PowerShell generates an error if a parameter or variable value
-doesn't match a value in the set. In the following example, the value of the
-**Detail** parameter can only be Low, Average, or High.
+or variable and enables tab completion. PowerShell generates an error if a
+parameter or variable value doesn't match a value in the set. In the following
+example, the value of the **Detail** parameter can only be Low, Average, or
+High.
 
 ```powershell
 Param(
@@ -694,6 +791,13 @@ Param(
 )
 ```
 
+### ValidateTrustedData validation attribute
+
+This attribute was added in PowerShell 6.1.1.
+
+At this time, the attribute is used internally by PowerShell itself and is not intended for external
+usage.
+
 ## Dynamic parameters
 
 Dynamic parameters are parameters of a cmdlet, function, or script that are
@@ -819,12 +923,13 @@ value is required.
 ## ArgumentCompleter attribute
 
 The **ArgumentCompleter** attribute allows you to add tab completion values to
-a specific parameter. Like **DynamicParameters**, the available values are
-calculated at runtime when the user presses <kbd>Tab</kbd> after the parameter
-name.
+a specific parameter. An **ArgumentCompleter** attribute must be defined for
+each parameter that needs tab completion. Similar to **DynamicParameters**, the
+available values are calculated at runtime when the user presses <kbd>Tab</kbd>
+after the parameter name.
 
 To add an **ArgumentCompleter** attribute, you need to define a script block
-that will determine the values. The script block must take the following
+that determines the values. The script block must take the following
 parameters in the order specified below. The parameter's names don't matter as
 the values are provided positionally.
 
@@ -834,7 +939,11 @@ The syntax is as follows:
 Param(
     [Parameter(Mandatory)]
     [ArgumentCompleter({
-        param ($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
+        param ( $commandName,
+                $parameterName,
+                $wordToComplete,
+                $commandAst,
+                $fakeBoundParameters )
         # Perform calculation of tab completed values here.
     })]
 )
@@ -852,21 +961,25 @@ The script block parameters are set to the following values:
   provided before they pressed <kbd>Tab</kbd>. Your script block should use
   this value to determine tab completion values.
 - `$commandAst` (Position 3) - This parameter is set to the Abstract Syntax
-  Tree (AST) for the current input line. For more information, see [Ast Class](/dotnet/api/system.management.automation.language.ast).
-- `$fakeBoundParameter` (Position 4) - This parameter is set to a hashtable
+  Tree (AST) for the current input line. For more information, see
+  [Ast Class](/dotnet/api/system.management.automation.language.ast).
+- `$fakeBoundParameters` (Position 4) - This parameter is set to a hashtable
   containing the `$PSBoundParameters` for the cmdlet, before the user pressed
-  <kbd>Tab</kbd>. For more information, see [about_Automatic_Variables](about_Automatic_Variables.md).
+  <kbd>Tab</kbd>. For more information, see
+  [about_Automatic_Variables](about_Automatic_Variables.md).
 
 The **ArgumentCompleter** script block must unroll the values using the
-pipeline, such as`ForEach-Object`, `Where-Object`, or another suitable method.
+pipeline, such as `ForEach-Object`, `Where-Object`, or another suitable method.
 Returning an array of values causes PowerShell to treat the entire array as
 **one** tab completion value.
 
-The following example adds tab completion to the **Value** parameter. If no
-`$Type` is specified, fruits and vegetables are returned. If a `$Type` is
-specified, only values for the type are specified. In addition, the `-like`
-operator ensures that if the user types the following command and uses
-<kbd>Tab</kbd> completion, only **Apple** is returned.
+The following example adds tab completion to the **Value** parameter. If only
+the **Value** parameter is specified, all possible values, or arguments, for
+**Value** are displayed. When the **Type** parameter is specified, the
+**Value** parameter only displays the possible values for that type.
+
+In addition, the `-like` operator ensures that if the user types the following
+command and uses <kbd>Tab</kbd> completion, only **Apple** is returned.
 
 `Test-ArgumentCompleter -Type Fruits -Value A`
 
@@ -874,10 +987,10 @@ operator ensures that if the user types the following command and uses
 function Test-ArgumentCompleter {
 [CmdletBinding()]
  param (
-        [Parameter(Mandatory)]
+        [Parameter(Mandatory=$true)]
         [ValidateSet('Fruits', 'Vegetables')]
         $Type,
-        [Parameter(Mandatory)]
+        [Parameter(Mandatory=$true)]
         [ArgumentCompleter( {
             param ( $commandName,
                     $parameterName,

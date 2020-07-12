@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 12/19/2018
-online version: https://go.microsoft.com/fwlink/?linkid=821772
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-custom?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-Custom
 ---
@@ -85,7 +85,7 @@ Failed to evaluate expression " $_ / $null ".
 Specifies the number of columns in the display.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -103,7 +103,7 @@ aid when you are formatting expressions in a `Format-Custom` command, and the ex
 appear to be working.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -127,7 +127,7 @@ Valid values are:
 - Both: Displays the properties of the collection object and the properties of objects in the collection.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: CoreOnly, EnumOnly, Both
@@ -146,7 +146,7 @@ Directs the cmdlet to display all of the error information. Use with the **Displ
 streams, only some of the error information is displayed.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -170,7 +170,7 @@ property, use a hash table. Valid keys are:
 - FormatString \<string\>
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -187,7 +187,7 @@ Specifies the objects to be formatted. Enter a variable that contains the object
 or expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -214,7 +214,7 @@ property, use a hash table. Valid keys are:
 - Depth \<int32\>
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -232,7 +232,7 @@ aid when you are formatting expressions in a `Format-Custom` command, and the ex
 appear to be working.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -250,7 +250,7 @@ uses a default custom view. You cannot use the **Property** and **View** paramet
 command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -302,4 +302,3 @@ group the objects, use `Sort-Object` to sort them.
 [Format-Wide](Format-Wide.md)
 
 [Get-Process](../Microsoft.PowerShell.Management/Get-Process.md)
-

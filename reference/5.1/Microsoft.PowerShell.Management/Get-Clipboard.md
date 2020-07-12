@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 05/15/2019
-online version: https://go.microsoft.com/fwlink/?linkid=526219
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Clipboard
 ---
@@ -71,7 +71,7 @@ Specifies the type, or format, of the clipboard. The acceptable values for this 
 - Audio
 
 ```yaml
-Type: ClipboardFormat
+Type: Microsoft.PowerShell.Commands.ClipboardFormat
 Parameter Sets: (All)
 Aliases:
 Accepted values: Text, FileDropList, Image, Audio
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet ignores newline characters and gets the entire contents of the clipboard.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -110,7 +110,7 @@ Specifies the text data format type of the clipboard. The acceptable values for 
 - CommaSeparatedValue
 
 ```yaml
-Type: TextDataFormat
+Type: System.Windows.Forms.TextDataFormat
 Parameter Sets: (All)
 Aliases:
 Accepted values: Text, UnicodeText, Rtf, Html, CommaSeparatedValue
@@ -139,4 +139,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [Set-Clipboard](Set-Clipboard.md)
-

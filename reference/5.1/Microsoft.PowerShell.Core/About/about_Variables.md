@@ -1,9 +1,10 @@
 ---
-ms.date:  09/03/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Variables
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 03/19/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Variables
 ---
 
 # About Variables
@@ -141,8 +142,8 @@ Clear-Variable -Name MyVariable
 $MyVariable = $null
 ```
 
-To delete the variable, use [Remove-Variable](../../Microsoft.PowerShell.Utility/Remove-Variable.md)
-or [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md).
+To delete the variable, use [Remove-Variable](xref:Microsoft.PowerShell.Utility.Remove-Variable)
+or [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item).
 
 ```powershell
 Remove-Variable -Name MyVariable
@@ -163,7 +164,7 @@ a particular type of object. A single variable can even contain a collection,
 or array, of different types of objects at the same time.
 
 The data type of a variable is determined by the .NET types of the values of
-the variable. To view a variable's object type, use [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md).
+the variable. To view a variable's object type, use [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member).
 
 For example:
 
@@ -380,6 +381,12 @@ global scope, even when it's created in a script or function.
 $Global:Computers = "Server01"
 ```
 
+For any script or command that executes out of session, you need the `Using`
+scope modifier to embed variable values from the calling session scope, so that
+out of session code can access them.
+
+For more information, see [about_Remote_Variables](about_Remote_Variables.md).
+
 ## Saving variables
 
 Variables that you create are available only in the session in which you create
@@ -490,3 +497,5 @@ Get-Help <cmdlet-name>
 [about_Quoting_Rules](about_Quoting_Rules.md)
 
 [about_Scopes](about_Scopes.md)
+
+[about_Remote_Variables](about_Remote_Variables.md)

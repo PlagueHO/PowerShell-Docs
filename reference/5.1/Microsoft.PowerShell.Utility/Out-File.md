@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 04/23/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821839
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-file?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-File
 ---
@@ -19,14 +19,14 @@ Sends output to a file.
 
 ```
 Out-File [-FilePath] <string> [[-Encoding] <string>] [-Append] [-Force] [-NoClobber] [-Width <int>]
-[-NoNewline] [-InputObject <psobject>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-NoNewline] [-InputObject <psobject>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
 Out-File [[-Encoding] <string>] -LiteralPath <string> [-Append] [-Force] [-NoClobber] [-Width <int>]
-[-NoNewline] [-InputObject <psobject>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-NoNewline] [-InputObject <psobject>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -140,7 +140,7 @@ default encoding. That encoding may not match the encoding of the target file. T
 behavior as the redirection operator (`>>`).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -153,23 +153,23 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **Unicode**.
+Specifies the type of encoding for the target file. The default value is `unicode`.
 
 The acceptable values for this parameter are as follows:
 
-- **ASCII** Uses ASCII (7-bit) character set.
-- **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
-- **Default** Uses the encoding that corresponds to the system's active code page (usually ANSI).
-- **OEM** Uses the encoding that corresponds to the system's current OEM code page.
-- **String** Same as **Unicode**.
-- **Unicode** Uses UTF-16 with the little-endian byte order.
-- **Unknown** Same as **Unicode**.
-- **UTF7** Uses UTF-7.
-- **UTF8** Uses UTF-8.
-- **UTF32** Uses UTF-32 with the little-endian byte order.
+- `ascii` Uses ASCII (7-bit) character set.
+- `bigendianunicode` Uses UTF-16 with the big-endian byte order.
+- `default` Uses the encoding that corresponds to the system's active code page (usually ANSI).
+- `oem` Uses the encoding that corresponds to the system's current OEM code page.
+- `string` Same as `unicode`.
+- `unicode` Uses UTF-16 with the little-endian byte order.
+- `unknown` Same as `unicode`.
+- `utf7` Uses UTF-7.
+- `utf8` Uses UTF-8.
+- `utf32` Uses UTF-32 with the little-endian byte order.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: ASCII, BigEndianUnicode, Default, OEM, String, Unicode, Unknown, UTF7, UTF8, UTF32
@@ -186,7 +186,7 @@ Accept wildcard characters: False
 Specifies the path to the output file.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByPath
 Aliases:
 
@@ -203,7 +203,7 @@ Overrides the read-only attribute and overwrites an existing read-only file. The
 does not override security restrictions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -220,7 +220,7 @@ Specifies the objects to be written to the file. Enter a variable that contains 
 a command or expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -239,7 +239,7 @@ quotation marks. Single quotation marks tell PowerShell not to interpret any cha
 sequences. For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByLiteralPath
 Aliases: PSPath
 
@@ -257,7 +257,7 @@ already exists. By default, if a file exists in the specified path, `Out-File` o
 without warning.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: NoOverwrite
 
@@ -275,7 +275,7 @@ representations of the input objects are concatenated to form the output. No spa
 inserted between the output strings. No newline is added after the last output string.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -293,7 +293,7 @@ not wrapped. If this parameter is not used, the width is determined by the chara
 host. The default for the PowerShell console is 80 characters.
 
 ```yaml
-Type: Int
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -309,7 +309,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -325,7 +325,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

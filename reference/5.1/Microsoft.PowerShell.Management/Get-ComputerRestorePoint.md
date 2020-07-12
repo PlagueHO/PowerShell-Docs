@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 08/13/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821581
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-computerrestorepoint?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ComputerRestorePoint
 ---
@@ -146,7 +146,7 @@ Indicates that `Get-ComputerRestorePoint` gets the status of the most recent sys
 operation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: LastStatus
 Aliases:
 
@@ -166,7 +166,7 @@ If the **RestorePoint** parameter isn't specified, `Get-ComputerRestorePoint` re
 computer's system restore points.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: ID
 Aliases:
 

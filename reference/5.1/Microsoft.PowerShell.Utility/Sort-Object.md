@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 2/27/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821863
+ms.date: 03/20/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/sort-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Sort-Object
 ---
@@ -20,7 +20,7 @@ Sorts objects by property values.
 
 ```
 Sort-Object [[-Property] <Object[]>] [-Descending] [-Unique] [-InputObject <psobject>]
-[-Culture <string>] [-CaseSensitive] [<CommonParameters>]
+ [-Culture <string>] [-CaseSensitive] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -257,7 +257,11 @@ duplicate computer names. The list is sorted in the default order, ascending.
 ### Example 8: Sort a string as an integer
 
 This example shows how to sort a text file that contains string objects as integers. You can send
-each command down the pipeline to `Get-Member` and verify that the objects are strings or integers.
+each command down the pipeline to `Get-Member` and verify that the objects are strings instead of
+integers. For these examples, the `ProductId.txt` file contains an unsorted list of product numbers.
+
+In the first example, `Get-Content` gets the contents of the file and pipes lines to the
+`Sort-Object` cmdlet. `Sort-Object` sorts the string objects in ascending order.
 
 ```
 PS> Get-Content -Path C:\Test\ProductId.txt | Sort-Object
@@ -275,7 +279,7 @@ PS> Get-Content -Path C:\Test\ProductId.txt | Sort-Object
 88
 99999
 
-PS> Get-Content -Path C:\Test\ProductId.txt | ForEach-Object -Process {[int]$_} | Sort-Object
+PS> Get-Content -Path C:\Test\ProductId.txt | Sort-Object {[int]$_}
 0
 1
 2
@@ -291,10 +295,11 @@ PS> Get-Content -Path C:\Test\ProductId.txt | ForEach-Object -Process {[int]$_} 
 99999
 ```
 
-The `Get-Content` cmdlet uses the **Path** parameter to specify the directory and file name. The
-file **ProductId.txt** contains an unsorted list of product numbers. The string objects are sent
-down the pipeline to the `Sort-Object` cmdlet. `Sort-Object` sorts the string objects in ascending
-order.
+In the second example, `Get-Content` gets the contents of the file and pipes lines to the
+`Sort-Object` cmdlet. `Sort-Object` uses a script block to convert the strings to integers. In the
+sample code, `[int]` converts the string to an integer and `$_` represents each string as it comes
+down the pipeline. The integer objects are sent down the pipeline to the `Sort-Object` cmdlet.
+`Sort-Object` sorts the integer objects in numeric order.
 
 The `Get-Content` cmdlet uses the **Path** parameter to specify the directory and file name. The
 file **ProductId.txt** contains an unsorted list of product numbers. The string objects are sent
@@ -302,7 +307,6 @@ down the pipeline to the `ForEach-Object` cmdlet. `ForEach-Object` uses a script
 the strings to integers. In the sample code, `[int]` converts the string to an integer and `$_`
 represents each string as it comes down the pipeline. The integer objects are sent down the pipeline
 to the `Sort-Object` cmdlet. `Sort-Object` sorts the integer objects in numeric order.
-
 ## PARAMETERS
 
 ### -CaseSensitive
@@ -310,7 +314,7 @@ to the `Sort-Object` cmdlet. `Sort-Object` sorts the integer objects in numeric 
 Indicates that the sort is case-sensitive. By default, sorts are not case-sensitive.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -327,7 +331,7 @@ Specifies the cultural configuration to use for sorts. Use `Get-Culture` to disp
 culture configuration.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -346,7 +350,7 @@ To sort multiple properties with different sort orders, use a hash table. For ex
 table you can sort one property in ascending order and another property in descending order.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -365,7 +369,7 @@ collection. Because one object cannot be sorted, `Sort-Object` returns the entir
 unchanged.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -398,7 +402,7 @@ Valid keys for a hash table are as follows:
 - Descending \<Boolean\>
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -418,7 +422,7 @@ collection. The first instance of a unique value is included in the sorted outpu
 For example, character and CHARACTER.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

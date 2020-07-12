@@ -1,9 +1,10 @@
 ---
-ms.date:  05/02/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_PowerShell_exe
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 05/02/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_PowerShell_exe
 ---
 # About PowerShell.exe
 
@@ -136,9 +137,16 @@ because it has no special meaning to the current **cmd.exe** shell. The
 `$env:windir` style of environment variable reference _can_ be used inside a
 **Command** parameter, since there it will be interpreted as PowerShell code.
 
+Similarly, if you want to execute the same command from a **Batch script**, you 
+would use `%~dp0` instead of `.\` or `$PSScriptRoot` to represent the current 
+execution directory: `powershell.exe -File %~dp0test.ps1 -TestParam %windir%`. 
+If you instead used `.\test.ps1`, PowerShell would throw an error because it 
+cannot find the literal path `.\test.ps1`
+
 When the value of **File** is a file path, **File** _must_ be the last
-parameter specified because any characters typed after the command are
-interpreted as the command arguments.
+parameter in the command because any characters typed after the **File**
+parameter name are interpreted as the script file path followed by the script
+parameters.
 
 You can include the script parameters and values in the value of the **File**
 parameter. For example: `-File .\Get-Script.ps1 -Domain Central`
@@ -148,9 +156,9 @@ For example, the following command uses the **All** parameter of the
 `Get-Script.ps1` script file: `-File .\Get-Script.ps1 -All`
 
 In rare cases, you might need to provide a **Boolean** value for a switch
-parameter. To provide a **Boolean** value for a switch parameter in the value
-of the File parameter, enclose the parameter name and value in curly braces,
-such as the following: `-File .\Get-Script.ps1 {-All:$False}`.
+parameter. It is not possible to pass an explicit boolean value for a switch
+parameter when running a script in the way. This limitation was removed in
+PowerShell 6 (`pwsh.exe`).
 
 #### -ExecutionPolicy \<ExecutionPolicy\>
 

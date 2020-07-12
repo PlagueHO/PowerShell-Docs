@@ -1,9 +1,10 @@
 ---
-ms.date:  01/03/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_WQL
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 01/03/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wql?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_WQL
 ---
 
 # About WQL
@@ -44,7 +45,7 @@ slowly.
 
 A typical WMI query begins with a Select statement that gets all properties or
 particular properties of a WMI class. To select all properties of a WMI class,
-use an asterisk (*). The From keyword specifies the WMI class.
+use an asterisk (\*). The From keyword specifies the WMI class.
 
 A Select statement has the following format:
 
@@ -445,7 +446,7 @@ create simple, yet powerful filters.
 
 ### LIKE OPERATOR EXAMPLES
 
-#### EXAMPLE 1: [<range>]
+#### EXAMPLE 1: [\<range>]
 
 The following commands start Notepad and then search for an instance of the
 Win32_Process class that has a name that starts with a letter between "H" and
@@ -465,7 +466,7 @@ Name                                ProcessID
 notepad.exe                              1740
 ```
 
-#### EXAMPLE 2: [<range>] and %
+#### EXAMPLE 2: [\<range>] and %
 
 The following commands select all process that have a name that begins with a
 letter between A and P (case-insensitive) followed by zero or more letters in
@@ -499,7 +500,7 @@ Sort-Object -Property Name
 #### EXAMPLE 4: Any characters -- or none (%)
 
 The following commands get processes that have names that begin with "calc".
-The % symbol in WQL is equivalent to the asterisk (*) symbol in regular
+The % symbol in WQL is equivalent to the asterisk (\*) symbol in regular
 expressions.
 
 ```powershell

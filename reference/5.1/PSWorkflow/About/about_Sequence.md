@@ -1,9 +1,10 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Sequence
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 06/09/2017
+online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_sequence?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Sequence
 ---
 
 # About Sequence
@@ -119,4 +120,4 @@ workflow Test-Workflow
 
 [about_Workflows](about_Workflows.md)
 
-[Creating a Workflow by Using a Windows PowerShell Script](/powershell/developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script)
+[Creating a Workflow by Using a Windows PowerShell Script](/previous-versions/powershell/scripting/developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script)

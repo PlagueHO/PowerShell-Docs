@@ -1,8 +1,9 @@
 ---
-ms.date:  11/30/2017
-schema:  2.0.0
-keywords:  powershell,cmdlet
-title:  about_Profiles
+keywords: powershell,cmdlet
+ms.date: 11/30/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Profiles
 ---
 # About Profiles
 
@@ -185,7 +186,7 @@ deleted.
 
 The session-specific commands and items include variables, preference
 variables, aliases, functions, commands (except for
-[Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)),
+[Set-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy)),
 and PowerShell modules that you add to the session.
 
 To save these items and make them available in all future sessions, add them
@@ -288,7 +289,7 @@ commands that the profiles add are not present in the remote session. In
 addition, the `$PROFILE` automatic variable is not populated in remote
 sessions.
 
-To run a profile in a session, use the [Invoke-Command](../Invoke-Command.md)
+To run a profile in a session, use the [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
 cmdlet.
 
 For example, the following command runs the "Current user, Current Host"
@@ -329,4 +330,4 @@ are available in `$s`.
 
 [about_Scopes](about_Scopes.md)
 
-[Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
+[Set-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy)

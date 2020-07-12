@@ -1,5 +1,5 @@
 ---
-ms.date:  09/25/2019
+ms.date: 05/22/2020
 keywords:  powershell,cmdlet
 title:  How to use the PowerShell documentation
 ---
@@ -8,14 +8,16 @@ title:  How to use the PowerShell documentation
 Welcome to the PowerShell online documentation. This site contains cmdlet reference for the
 following versions of PowerShell:
 
-- PowerShell 7 (preview)
+- PowerShell 7
 - PowerShell 6
 - PowerShell 5.1
-- PowerShell 5.0
-- PowerShell 4.0
-- PowerShell 3.0
 
-## Selecting your version
+## Finding articles and selecting a version
+
+There are two ways to search for content in Docs. The simplest way is to use the filter box under
+the version selector. Just enter a word that appears in the title of an article. The page displays
+a list of matching articles. You can also select the option to search the entire site from that
+list.
 
 By default, this site displays documentation for the latest released version of PowerShell. Some
 cmdlets work differently in various versions of PowerShell. Be sure you are viewing the
@@ -23,13 +25,30 @@ documentation for the version of PowerShell you are using.
 
 Use the version picker at the top of the page to select the version of PowerShell you want.
 
-![version picker](images/how-to-use-docs/picker-vall.gif)
+![version picker](media/how-to-use-docs/version-search.gif)
 
-## Searching for articles
+You can verify the version of PowerShell you are using by inspecting the `$PSversionTable.PSVersion`
+value. The following example shows the output for Windows PowerShell v5.1.
 
-There are two ways to search for content in Docs. The simplest way is to use the filter box under
-the version selector. Just enter a word that appears in the title of an article. The page displays
-a list of matching articles. You can also select the option to search the entire site from that
-list.
+```powershell
+$PSVersionTable.PSVersion
+```
 
-![filter box](images/how-to-use-docs/filter-search.gif)
+```Output
+Major  Minor  Build  Revision
+-----  -----  -----  --------
+5      1      18362  145
+```
+
+## Finding articles for previous versions
+
+Documentation for older versions of PowerShell has been archived in our
+[Previous Versions](https://aka.ms/PSLegacyDocs) site.
+
+This site contains documentation for the following topics:
+
+- PowerShell 3.0
+- PowerShell 4.0
+- PowerShell 5.0
+- PowerShell Workflows
+- PowerShell Web Access

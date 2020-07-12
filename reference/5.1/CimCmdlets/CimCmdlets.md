@@ -1,12 +1,12 @@
 ---
+Download Help Link: https://go.microsoft.com/fwlink/?linkid=390758
+Help Version: 5.2.0.0
+keywords: powershell,cmdlet
+Locale: en-US
+Module Guid: fb6cc51d-c096-4b38-b78d-0fed6277096a
+Module Name: CimCmdlets
 ms.date: 02/20/2019
 schema: 2.0.0
-locale: en-US
-keywords: powershell,cmdlet
-Help Version: 5.1
-Module Guid: fb6cc51d-c096-4b38-b78d-0fed6277096a
-Download Help Link: https://go.microsoft.com/fwlink/?linkid=390758
-Module Name: CimCmdlets
 title: CimCmdlets Module
 ---
 # CimCmdlets Module
@@ -17,6 +17,9 @@ Contains cmdlets that interact with Common Information Model (CIM) Servers like 
 Management Instrumentation (WMI) service.
 
 ## CimCmdlets Cmdlets
+
+### [Export-BinaryMiLog](Export-BinaryMiLog.md)
+Creates a binary encoded representation of an object or objects and stores it in a file.
 
 ### [Get-CimAssociatedInstance](Get-CimAssociatedInstance.md)
 Retrieves the CIM instances that are connected to a specific CIM instance by an association.
@@ -29,6 +32,9 @@ Gets the CIM instances of a class from a CIM server.
 
 ### [Get-CimSession](Get-CimSession.md)
 Gets the CIM session objects from the current session.
+
+### [Import-BinaryMiLog](Import-BinaryMiLog.md)
+Used to re-create the saved objects based on the contents of an export file.
 
 ### [Invoke-CimMethod](Invoke-CimMethod.md)
 Invokes a method of a CIM class.

@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 5/10/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096439
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/measure-object?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Measure-Object
 ---
@@ -261,7 +261,6 @@ StandardDeviation : 859.444048419069
 Property          : CPU
 ```
 
-
 ### Example 12: Measure using wildcards
 
 Beginning in PowerShell 6, `Measure-Object` supports measurement of objects by using wildcards in
@@ -313,7 +312,7 @@ Property          : PeakPagedMemorySize
 Indicates that the cmdlet displays the average value of the specified properties.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: GenericMeasure
 Aliases:
 
@@ -333,7 +332,7 @@ Indicates that the cmdlet counts the number of characters in the input objects.
 > input objects. See Example 7.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: TextMeasure
 Aliases:
 
@@ -350,7 +349,7 @@ Indicates that the cmdlet ignores white space in character counts.
 By default, white space is not ignored.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: TextMeasure
 Aliases:
 
@@ -373,7 +372,7 @@ It is recommended that you use `Measure-Object` in the pipeline if you want to m
 collection of objects based on whether the objects have specific values in defined properties.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -393,7 +392,7 @@ Indicates that the cmdlet counts the number of lines in the input objects.
 > input objects. See Example 7.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: TextMeasure
 Aliases:
 
@@ -409,7 +408,7 @@ Accept wildcard characters: False
 Indicates that the cmdlet displays the maximum value of the specified properties.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: GenericMeasure
 Aliases:
 
@@ -425,7 +424,7 @@ Accept wildcard characters: False
 Indicates that the cmdlet displays the minimum value of the specified properties.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: GenericMeasure
 Aliases:
 
@@ -442,7 +441,7 @@ Specifies one or more properties to measure. If you do not specify any other mea
 `Measure-Object` counts the objects that have the properties you specify.
 
 ```yaml
-Type: PSPropertyExpression[]
+Type: Microsoft.PowerShell.Commands.PSPropertyExpression[]
 Parameter Sets: (All)
 Aliases:
 
@@ -458,7 +457,7 @@ Accept wildcard characters: True
 Indicates that the cmdlet displays the standard deviation of the values of the specified properties.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: GenericMeasure
 Aliases:
 
@@ -474,7 +473,7 @@ Accept wildcard characters: False
 Indicates that the cmdlet displays the sum of the values of the specified properties.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: GenericMeasure
 Aliases:
 
@@ -490,7 +489,7 @@ Accept wildcard characters: False
 Indicates that the cmdlet displays all the statistics of the specified properties.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: GenericMeasure
 Aliases:
 
@@ -510,7 +509,7 @@ Indicates that the cmdlet counts the number of words in the input objects.
 > input objects. See Example 7.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: TextMeasure
 Aliases:
 
@@ -559,4 +558,3 @@ Otherwise, it returns a **GenericMeasureInfo** object.
 [Tee-Object](Tee-Object.md)
 
 [Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
-

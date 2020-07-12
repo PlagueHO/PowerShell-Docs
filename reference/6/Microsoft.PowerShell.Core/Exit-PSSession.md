@@ -1,10 +1,10 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=2096278
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/exit-pssession?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Exit-PSSession
 ---
@@ -117,5 +117,3 @@ This cmdlet does not return any output.
 [Receive-PSSession](Receive-PSSession.md)
 
 [Remove-PSSession](Remove-PSSession.md)
-
-

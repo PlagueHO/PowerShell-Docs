@@ -1,9 +1,10 @@
 ---
+keywords: powershell,cmdlet
+Locale: en-US
 ms.date: 3/28/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Wildcards
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wildcards?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Wildcards
 ---
 
 # About Wildcards
@@ -29,10 +30,10 @@ PowerShell supports the following wildcard characters:
 
 |Wildcard|Description               |Example |Match        |No Match|
 |--------|--------------------------|--------|-------------|--------|
-|*       |Match zero or more characters | a*  | aA, ag, Apple | banana |
+|\*      |Match zero or more characters | a\*  | aA, ag, Apple | banana |
 |?       |Match one character in that position | ?n | an, in, on | ran |
-|[ ]     |Match a range of characters | [a-l]ook | book, cook, look | took |
-|[ ]     |Match specific characters | [bc]ook | book, cook | hook |
+|\[ \]   |Match a range of characters | \[a-l\]ook | book, cook, look | took |
+|\[ \]   |Match specific characters | \[bc\]ook | book, cook | hook |
 
 You can include multiple wildcard characters in the same word pattern. For
 example, to find text files with names that begin with the letters **a**

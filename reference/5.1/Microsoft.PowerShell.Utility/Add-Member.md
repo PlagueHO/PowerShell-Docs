@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 4/26/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821748
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-member?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Member
 ---
@@ -21,11 +21,11 @@ Adds custom properties and methods to an instance of a PowerShell object.
 Add-Member -InputObject <PSObject> -TypeName <String> [-PassThru] [<CommonParameters>]
 ```
 
-### MemberSet
+### NotePropertyMultiMemberSet
 
 ```
-Add-Member -InputObject <PSObject> [-MemberType] <PSMemberTypes> [-Name] <String> [[-Value] <Object>]
- [[-SecondValue] <Object>] [-TypeName <String>] [-Force] [-PassThru] [<CommonParameters>]
+Add-Member -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
+ [-NotePropertyMembers] <IDictionary> [<CommonParameters>]
 ```
 
 ### NotePropertySingleMemberSet
@@ -35,11 +35,11 @@ Add-Member -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru] [-N
  [-NotePropertyValue] <Object> [<CommonParameters>]
 ```
 
-### NotePropertyMultiMemberSet
+### MemberSet
 
 ```
-Add-Member -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
- [-NotePropertyMembers] <IDictionary> [<CommonParameters>]
+Add-Member -InputObject <PSObject> [-MemberType] <PSMemberTypes> [-Name] <String> [[-Value] <Object>]
+ [[-SecondValue] <Object>] [-TypeName <String>] [-Force] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -121,7 +121,7 @@ $A.Size
 ### Example 3: Add a StringUse note property to a string
 
 This example adds the **StringUse** note property to a string.
-Because `Add-Member` cannot add types to **String** input objects, you can speciy the **PassThru**
+Because `Add-Member` cannot add types to **String** input objects, you can specify the **PassThru**
 parameter to generate an output object. The last command in the example displays the new property.
 
 This example uses the **NotePropertyMembers** parameter. The value of the **NotePropertyMembers**
@@ -210,7 +210,7 @@ $Asset | Get-Member
 
 ```Output
    TypeName: Asset
-   
+
 Name        MemberType   Definition
 ----        ----------   ----------
 Equals      Method       bool Equals(System.Object obj)
@@ -230,7 +230,7 @@ Indicates that this cmdlet adds a new member even the object has a custom member
 You cannot use the **Force** parameter to replace a standard member of a type.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: MemberSet, NotePropertySingleMemberSet, NotePropertyMultiMemberSet
 Aliases:
 
@@ -247,7 +247,7 @@ Specifies the object to which the new member is added.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -269,7 +269,7 @@ The acceptable values for this parameter are:
 - ScriptProperty
 - CodeProperty
 - ScriptMethod
-- CopyMethod
+- CodeMethod
 
 For information about these values, see [PSMemberTypes Enumeration](/dotnet/api/system.management.automation.psmembertypes)
 in the MSDN library.
@@ -278,7 +278,7 @@ Not all objects have every type of member.
 If you specify a member type that the object does not have, PowerShell returns an error.
 
 ```yaml
-Type: PSMemberTypes
+Type: System.Management.Automation.PSMemberTypes
 Parameter Sets: MemberSet
 Aliases: Type
 Accepted values: AliasProperty, CodeProperty, Property, NoteProperty, ScriptProperty, Properties, PropertySet, Method, CodeMethod, ScriptMethod, Methods, ParameterizedProperty, MemberSet, Event, Dynamic, All
@@ -295,7 +295,7 @@ Accept wildcard characters: False
 Specifies the name of the member that this cmdlet adds.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: MemberSet
 Aliases:
 
@@ -318,7 +318,7 @@ For more information about hash tables and ordered dictionaries in PowerShell, s
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: IDictionary
+Type: System.Collections.IDictionary
 Parameter Sets: NotePropertyMultiMemberSet
 Aliases:
 
@@ -339,7 +339,7 @@ This parameter is optional.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NotePropertySingleMemberSet
 Aliases:
 
@@ -360,7 +360,7 @@ This parameter is optional.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: NotePropertySingleMemberSet
 Aliases:
 
@@ -386,7 +386,7 @@ Use the **PassThru** parameter to create an output object for any object that ha
 wrapper.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -416,12 +416,30 @@ used to get the value of a variable. The second **ScriptBlock**, specified in th
 **SecondValue** parameter, is used to set the value of a variable.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: MemberSet
 Aliases:
 
 Required: False
 Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Value
+
+Specifies the initial value of the added member.
+If you add an **AliasProperty**, **CodeProperty**, **ScriptProperty** or **CodeMethod** member, you
+can supply optional, additional information by using the **SecondValue** parameter.
+
+```yaml
+Type: System.Object
+Parameter Sets: MemberSet
+Aliases:
+
+Required: False
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -438,30 +456,12 @@ This parameter is effective only when the **InputObject** is a **PSObject**.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: TypeNameSet, NotePropertyMultiMemberSet, NotePropertySingleMemberSet, MemberSet
 Aliases:
 
 Required: True (TypeNameSet), False (NotePropertyMultiMemberSet, NotePropertySingleMemberSet, MemberSet)
 Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Value
-
-Specifies the initial value of the added member.
-If you add an **AliasProperty**, **CodeProperty**, **ScriptProperty** or **CodeMethod** member, you
-can supply optional, additional information by using the **SecondValue** parameter.
-
-```yaml
-Type: Object
-Parameter Sets: MemberSet
-Aliases:
-
-Required: False
-Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

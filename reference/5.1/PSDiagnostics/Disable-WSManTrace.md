@@ -1,9 +1,10 @@
 ---
 external help file: PSDiagnostics-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSDiagnostics
 ms.date: 11/29/2018
+online version: https://docs.microsoft.com/powershell/module/psdiagnostics/disable-wsmantrace?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disable-WSManTrace
 ---
@@ -48,7 +49,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### None
+### System.Object
 
 ## NOTES
 
@@ -59,4 +60,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Stop-Trace](stop-trace.md)
 
 [Enable-WSManTrace](Enable-WSManTrace.md)
-

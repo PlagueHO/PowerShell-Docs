@@ -1,9 +1,10 @@
 ---
-ms.date:  01/03/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Functions_Advanced_Methods
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 01/03/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_methods?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Functions_Advanced_Methods
 ---
 
 # About Functions Advanced Methods
@@ -116,7 +117,7 @@ For more information about this method, see
 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/system.management.automation.cmdlet.shouldprocess).
 
 For more information about how to request confirmation, see
-[Requesting Confirmation](/powershell/developer/cmdlet/requesting-confirmation).
+[Requesting Confirmation](/powershell/scripting/developer/cmdlet/requesting-confirmation).
 
 #### ShouldContinue
 
@@ -132,7 +133,7 @@ non-terminating error occurs, the function should call the `WriteError` method,
 which is described in the `Write` methods section. When a terminating error
 occurs and the function can't continue, it should call the
 `ThrowTerminatingError` method. You can also use the `Throw` statement for
-terminating errors and the [Write-Error](../../Microsoft.PowerShell.Utility/Write-Error.md)
+terminating errors and the [Write-Error](xref:Microsoft.PowerShell.Utility.Write-Error)
 cmdlet for non-terminating errors.
 
 For more information, see

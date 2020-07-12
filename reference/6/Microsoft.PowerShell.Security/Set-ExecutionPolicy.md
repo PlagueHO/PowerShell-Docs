@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Security
 ms.date: 3/22/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096422
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ExecutionPolicy
 ---
@@ -20,7 +20,7 @@ Sets the PowerShell execution policies for Windows computers.
 
 ```
 Set-ExecutionPolicy [-ExecutionPolicy] <ExecutionPolicy> [[-Scope] <ExecutionPolicyScope>] [-Force]
-[-WhatIf] [-Confirm] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,9 +28,9 @@ Set-ExecutionPolicy [-ExecutionPolicy] <ExecutionPolicy> [[-Scope] <ExecutionPol
 The `Set-ExecutionPolicy` cmdlet changes PowerShell execution policies for Windows computers. For
 more information, see [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).
 
-For non-Windows computers, the default execution policy is **Unrestricted** and cannot be changed.
-The `Set-ExecutionPolicy` cmdlet is available, but PowerShell displays a console message that it's
-not supported.
+Beginning in PowerShell 6.0 for non-Windows computers, the default execution policy is
+**Unrestricted** and can't be changed. The `Set-ExecutionPolicy` cmdlet is available, but PowerShell
+displays a console message that it's not supported.
 
 An execution policy is part of the PowerShell security strategy. Execution policies determine
 whether you can load configuration files, such as your PowerShell profile, or run scripts. And,
@@ -251,6 +251,22 @@ to run because it was unblocked by the `Unblock-File` cmdlet.
 
 ## PARAMETERS
 
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ExecutionPolicy
 
 Specifies the execution policy. If there are no Group Policies and each scope's execution policy is
@@ -270,12 +286,13 @@ The acceptable execution policy values are as follows:
 - **Undefined**. No execution policy is set for the scope. Removes an assigned execution policy from
   a scope that is not set by a Group Policy. If the execution policy in all scopes is **Undefined**,
   the effective execution policy is **Restricted**.
-- **Unrestricted**. Loads all configuration files and runs all scripts. If you run an unsigned
-  script that was downloaded from the Internet, you are prompted for permission before it runs. The
-  default execution policy for non-Windows computers and cannot be changed.
+- **Unrestricted**. Beginning in PowerShell 6.0, this is the default execution policy for
+  non-Windows computers and can't be changed. Loads all configuration files and runs all scripts. If
+  you run an unsigned script that was downloaded from the internet, you're prompted for permission
+  before it runs.
 
 ```yaml
-Type: ExecutionPolicy
+Type: Microsoft.PowerShell.ExecutionPolicy
 Parameter Sets: (All)
 Aliases:
 Accepted values: AllSigned, Bypass, Default, RemoteSigned, Restricted, Undefined, Unrestricted
@@ -293,13 +310,13 @@ Suppresses all the confirmation prompts. Use caution with this parameter to avoi
 results.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -327,7 +344,7 @@ Execution policies for the **LocalMachine** scope are written to the registry hi
 **HKEY_LOCAL_MACHINE**.
 
 ```yaml
-Type: ExecutionPolicyScope
+Type: Microsoft.PowerShell.ExecutionPolicyScope
 Parameter Sets: (All)
 Aliases:
 Accepted values: CurrentUser, LocalMachine, MachinePolicy, Process, UserPolicy
@@ -339,28 +356,12 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirm
-
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -WhatIf
 
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -402,7 +403,6 @@ If the Group Policy **Turn on Script Execution** is enabled for the computer or 
 preference is saved, but it is not effective. PowerShell displays a message that explains the
 conflict.
 
-
 ## RELATED LINKS
 
 [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
@@ -422,4 +422,3 @@ conflict.
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
 [Unblock-File](../Microsoft.PowerShell.Utility/Unblock-File.md)
-

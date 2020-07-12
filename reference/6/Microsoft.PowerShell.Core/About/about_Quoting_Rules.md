@@ -1,9 +1,10 @@
 ---
-ms.date:  01/03/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Quoting_Rules
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 01/03/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Quoting_Rules
 ---
 # About Quoting Rules
 
@@ -212,6 +213,7 @@ Double-quotes:
 ```
 
 Single-quotes:
+
 ```
 @'<Enter>
 <string> [string] ...<Enter>
@@ -292,9 +294,9 @@ variable.
 
 ```powershell
 $page = [XML] @"
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
-xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
-xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+<command:command xmlns:maml="https://schemas.microsoft.com/maml/2004/10"
+xmlns:command="https://schemas.microsoft.com/maml/dev/command/2004/10"
+xmlns:dev="https://schemas.microsoft.com/maml/dev/2004/10">
 <command:details>
         <command:name>
                Format-Table
@@ -319,4 +321,4 @@ more information, see ConvertFrom-StringData.
 
 [about_Special_Characters](about_Special_Characters.md)
 
-[ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
+[ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData)

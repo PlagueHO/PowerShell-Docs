@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/22/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096828
+ms.date: 10/10/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-Json
 ---
@@ -31,6 +31,9 @@ contains duplicate keys, only the last key is used by this cmdlet. See other exa
 To generate a JSON string from any object, use the `ConvertTo-Json` cmdlet.
 
 This cmdlet was introduced in PowerShell 3.0.
+
+> [!NOTE]
+> Beginning with PowerShell 6, this cmdlet supports JSON with comments.
 
 ## EXAMPLES
 
@@ -119,7 +122,7 @@ There are several scenarios where it can overcome some limitations of the `Conve
 - Hash tables can be processed faster for certain data structures.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -135,8 +138,10 @@ Accept wildcard characters: False
 Gets or sets the maximum depth the JSON input is allowed to have.
 By default, it is 1024.
 
+This parameter was introduced in PowerShell 6.2.
+
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -158,7 +163,7 @@ object is an empty string, `ConvertFrom-Json` does not generate any output. The 
 value cannot be `$null`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

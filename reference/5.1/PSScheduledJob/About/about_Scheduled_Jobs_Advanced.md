@@ -1,9 +1,10 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Scheduled_Jobs_Advanced
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 06/09/2017
+online version: https://docs.microsoft.com/powershell/module/psscheduledjob/about/about_scheduled_jobs_advanced?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Scheduled_Jobs_Advanced
 ---
 
 # About Scheduled Jobs Advanced
@@ -16,7 +17,7 @@ underlies scheduled jobs.
 ## Long description
 
 For more information about the cmdlets contained in the **PSScheduledJob**
-module, see [PSScheduledJob](../PSScheduledJob.md).
+module, see [PSScheduledJob](xref:PSScheduledJob).
 
 ## Scheduled job directories and files
 
@@ -261,6 +262,6 @@ Get-ScheduledJob |
 
 [about_Splatting.md](../../Microsoft.PowerShell.Core/About/about_Splatting.md)
 
-[PSScheduledJob](../PSScheduledJob.md) module cmdlets
+[PSScheduledJob](xref:PSScheduledJob) module cmdlets
 
 [Task Scheduler](/windows/desktop/TaskSchd/task-scheduler-reference)

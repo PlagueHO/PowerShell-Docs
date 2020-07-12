@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=2096445
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-event?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Event
 ---
@@ -72,7 +72,7 @@ Because the events that **New-Event** raises are automatically added to the Powe
 Specifies an object that contains options for the event.
 
 ```yaml
-Type: PSObject[]
+Type: System.Management.Automation.PSObject[]
 Parameter Sets: (All)
 Aliases:
 
@@ -89,7 +89,7 @@ Specifies additional data associated with the event.
 The value of this parameter appears in the **MessageData** property of the event object.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -106,7 +106,7 @@ Specifies the object that raises the event.
 The default is the PowerShell engine.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -125,7 +125,7 @@ This parameter is required, and it must be unique in the session.
 The value of this parameter appears in the **SourceIdentifier** property of the events.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -152,9 +152,7 @@ You cannot pipe input to this cmdlet.
 
 ## NOTES
 
-* The new custom event, the event subscription, and the event queue exist only in the current session. If you close the current session, the event queue is discarded and the event subscription is canceled.
-
-*
+The new custom event, the event subscription, and the event queue exist only in the current session. If you close the current session, the event queue is discarded and the event subscription is canceled.
 
 ## RELATED LINKS
 
@@ -169,5 +167,3 @@ You cannot pipe input to this cmdlet.
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-
-

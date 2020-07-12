@@ -1,9 +1,10 @@
 ---
-ms.date:  04/01/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Try_Catch_Finally
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 04/01/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_try_catch_finally?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Try_Catch_Finally
 ---
 # About Try Catch Finally
 
@@ -171,6 +172,16 @@ inherit from the **SystemException** type.
 
 If you specify an error class and one of its derived classes, place the `Catch`
 block for the derived class before the `Catch` block for the general class.
+
+### Using Traps in a Try Catch
+
+When a terminating error occurs in a `Try` block with a `Trap` defined within
+the `Try` block, even if there is a matching `Catch` block, the `Trap` statement
+takes control.
+
+If a `Trap` exists at a higher block than the `Try`, and there is no matching
+`Catch` block within the current scope, the `Trap` will take control, even if
+any parent scope has a matching `Catch` block.
 
 ### ACCESSING EXCEPTION INFORMATION
 

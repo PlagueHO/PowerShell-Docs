@@ -1,9 +1,10 @@
 ---
-ms.date:  01/03/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Transactions
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 01/03/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_transactions?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Transactions
 ---
 
 # About Transactions
@@ -834,18 +835,18 @@ SKC  VC Name                           Property
 
 ## SEE ALSO
 
-[Start-Transaction](../../Microsoft.PowerShell.Management/Start-Transaction.md)
+[Start-Transaction](xref:Microsoft.PowerShell.Management.Start-Transaction)
 
-[Get-Transaction](../../Microsoft.PowerShell.Management/Get-Transaction.md)
+[Get-Transaction](xref:Microsoft.PowerShell.Management.Get-Transaction)
 
-[Complete-Transaction](../../Microsoft.PowerShell.Management/Complete-Transaction.md)
+[Complete-Transaction](xref:Microsoft.PowerShell.Management.Complete-Transaction)
 
-[Undo-Transaction](../../Microsoft.PowerShell.Management/Undo-Transaction.md)
+[Undo-Transaction](xref:Microsoft.PowerShell.Management.Undo-Transaction)
 
-[Use-Transaction](../../Microsoft.PowerShell.Management/Use-Transaction.md)
+[Use-Transaction](xref:Microsoft.PowerShell.Management.Use-Transaction)
 
-[Get-PSProvider](../../Microsoft.PowerShell.Management/Get-PSProvider.md)
+[Get-PSProvider](xref:Microsoft.PowerShell.Management.Get-PSProvider)
 
-[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
+[Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
 
 [about_Providers](about_Providers.md)

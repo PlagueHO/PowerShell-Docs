@@ -1,18 +1,21 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-Help Version:  5.1.1.0
-Download Help Link:  https://go.microsoft.com/fwlink/?LinkId=717973
-Module Guid:  8e362604-2c0b-448f-a414-a6a690a644e2
-title:  Microsoft.PowerShell.LocalAccounts
-Module Name:  Microsoft.PowerShell.LocalAccounts
+Download Help Link: https://go.microsoft.com/fwlink/?LinkId=717973
+Help Version: 5.2.0.0
+keywords: powershell,cmdlet
+Locale: en-US
+Module Guid: 8e362604-2c0b-448f-a414-a6a690a644e2
+Module Name: Microsoft.PowerShell.LocalAccounts
+ms.date: 06/09/2017
+schema: 2.0.0
+title: Microsoft.PowerShell.LocalAccounts
 ---
 
 # Microsoft.PowerShell.LocalAccounts Module
 ## Description
 This section contains the help topics for the Local Accounts cmdlets in Windows PowerShell.
+
+> [!NOTE]
+> This module is not available in 32-bit PowerShell on a 64-bit system.
 
 ## Microsoft.PowerShell.LocalAccounts Cmdlets
 
@@ -60,5 +63,3 @@ Changes a local security group.
 
 ### [Set-LocalUser](Set-LocalUser.md)
 Modifies a local user account.
-
-

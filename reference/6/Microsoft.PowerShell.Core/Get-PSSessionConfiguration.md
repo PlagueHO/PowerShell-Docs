@@ -1,10 +1,10 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 03/26/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096271
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-pssessionconfiguration?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PSSessionConfiguration
 ---
@@ -82,11 +82,11 @@ SchemaVersion                 : 1.0.0.0
 LanguageMode                  : FullLanguage
 Architecture                  : 64
 Filename                      : %windir%\system32\pwrshplugin.dll
-ResourceUri                   : http://schemas.microsoft.com/powershell/Full
+ResourceUri                   : https://schemas.microsoft.com/powershell/Full
 MaxConcurrentCommandsPerShell : 1500
 UseSharedProcess              : false
 ProcessIdleTimeoutSec         : 0
-xmlns                         : http://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
+xmlns                         : https://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
 MaxConcurrentUsers            : 10
 lang                          : en-US
 SupportsOptions               : true
@@ -230,7 +230,7 @@ variable, which takes a resource URI.
 ```
 
 ```Output
-http://schemas.microsoft.com/powershell/microsoft.CustomShell
+https://schemas.microsoft.com/powershell/microsoft.CustomShell
 ```
 
 The `$PSSessionConfigurationName` variable specifies the default configuration that is used when you
@@ -245,7 +245,7 @@ the remote computer. For more information about the `$PSSessionConfiguration` va
 Suppresses the prompt to restart the WinRM service, if the service is not already running.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -262,7 +262,7 @@ Gets only the session configurations with the specified name or name pattern. En
 session configuration names. Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

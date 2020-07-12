@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 04/04/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096887
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-debug?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Debug
 ---
@@ -95,7 +95,7 @@ For more information about the **Debug** common parameter, see [about_CommonPara
 Specifies the debug message to send to the console.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: Msg
 
@@ -139,5 +139,3 @@ You can pipe a string that contains a debug message to `Write-Debug`.
 [Write-Verbose](Write-Verbose.md)
 
 [Write-Warning](Write-Warning.md)
-
-

@@ -1,9 +1,10 @@
 ---
-ms.date:  11/29/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Jobs
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 11/29/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_jobs?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Jobs
 ---
 # About Jobs
 
@@ -41,11 +42,11 @@ work in the session without interruption while the job runs.
 
 ## HOW TO START A JOB ON THE LOCAL COMPUTER
 
-To start a background job on the local computer, use the Start-Job
+To start a background job on the local computer, use the `Start-Job`
 cmdlet.
 
-To write a Start-Job command, enclose the command that the job runs in
-braces ( { } ). Use the ScriptBlock parameter to specify the command.
+To write a `Start-Job` command, enclose the command that the job runs in curly
+braces ( `{ }` ). Use the **ScriptBlock** parameter to specify the command.
 
 The following command starts a background job that runs a `Get-Process`
 command on the local computer.
@@ -66,8 +67,9 @@ object and saves the resulting job object in the \$job variable.
 $job = Start-Job -ScriptBlock {Get-Process}
 ```
 
-You can also use `&` to start jobs.
-The following command is functionally equivalent to the command above.
+Beginning in PowerShell 6.0, you can use an amersand (`&`) at the end of a
+pipeline to start a background job. The following command is functionally
+equivalent to the command above.
 
 ```powershell
 $job = Get-Process &
@@ -79,7 +81,7 @@ see [background operator](about_Operators.md#background-operator-).
 
 You can also use the `Get-Job` cmdlet to get objects that represent the jobs
 started in the current session. `Get-Job` returns the same job object that
-Start-Job returns.
+`Start-Job` returns.
 
 ## GETTING JOB OBJECTS
 
@@ -340,16 +342,16 @@ is denied.
 
 [about_PSSessions](about_PSSessions.md)
 
-[Start-Job](../Start-Job.md)
+[Start-Job](xref:Microsoft.PowerShell.Core.Start-Job)
 
-[Get-Job](../Get-Job.md)
+[Get-Job](xref:Microsoft.PowerShell.Core.Get-Job)
 
-[Receive-Job](../Receive-Job.md)
+[Receive-Job](xref:Microsoft.PowerShell.Core.Receive-Job)
 
-[Stop-Job](../Stop-Job.md)
+[Stop-Job](xref:Microsoft.PowerShell.Core.Stop-Job)
 
-[Wait-Job](../Wait-Job.md)
+[Wait-Job](xref:Microsoft.PowerShell.Core.Wait-Job)
 
-[Remove-Job](../Remove-Job.md)
+[Remove-Job](xref:Microsoft.PowerShell.Core.Remove-Job)
 
-[Invoke-Command](../../Microsoft.PowerShell.Core/Invoke-Command.md)
+[Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)

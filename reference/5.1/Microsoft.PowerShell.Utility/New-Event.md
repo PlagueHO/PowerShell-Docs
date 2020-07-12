@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=821833
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-event?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Event
 ---
@@ -36,6 +36,7 @@ If you do not subscribe to the custom event, to delete the event, you must chang
 ## EXAMPLES
 
 ### Example 1: Create a new event in the event queue
+
 ```
 PS C:\> New-Event -SourceIdentifier Timer -Sender windows.timer -MessageData "Test"
 ```
@@ -44,6 +45,7 @@ This command creates a new event in the Windows PowerShell event queue.
 It uses a **Windows.Timer** object to send the event.
 
 ### Example 2: Raise an event in response to another event
+
 ```
 PS C:\> function Enable-ProcessCreationEvent
 {
@@ -69,7 +71,7 @@ Because the events that **New-Event** raises are automatically added to the Wind
 Specifies an object that contains options for the event.
 
 ```yaml
-Type: PSObject[]
+Type: System.Management.Automation.PSObject[]
 Parameter Sets: (All)
 Aliases:
 
@@ -85,7 +87,7 @@ Specifies additional data associated with the event.
 The value of this parameter appears in the **MessageData** property of the event object.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -101,7 +103,7 @@ Specifies the object that raises the event.
 The default is the Windows PowerShell engine.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -119,7 +121,7 @@ This parameter is required, and it must be unique in the session.
 The value of this parameter appears in the **SourceIdentifier** property of the events.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -143,9 +145,8 @@ You cannot pipe input to this cmdlet.
 ### System.Management.Automation.PSEventArgs
 
 ## NOTES
-* The new custom event, the event subscription, and the event queue exist only in the current session. If you close the current session, the event queue is discarded and the event subscription is canceled.
 
-*
+The new custom event, the event subscription, and the event queue exist only in the current session. If you close the current session, the event queue is discarded and the event subscription is canceled.
 
 ## RELATED LINKS
 
@@ -160,5 +161,3 @@ You cannot pipe input to this cmdlet.
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-
-

@@ -1,9 +1,10 @@
 ---
-ms.date:  09/09/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Modules
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 09/09/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Modules
 ---
 # About Modules
 
@@ -22,7 +23,7 @@ commands.
 
 This topic explains how to use PowerShell modules. For information about how
 to write PowerShell modules, see
-[Writing a PowerShell Module](/powershell/developer/module/writing-a-windows-powershell-module).
+[Writing a PowerShell Module](/powershell/scripting/developer/module/writing-a-windows-powershell-module).
 
 ## What Is a Module?
 
@@ -144,7 +145,7 @@ Get-Module
 ```
 
 For more information about the `Get-Module` cmdlet, see
-[Get-Module](../Get-Module.md).
+[Get-Module](xref:Microsoft.PowerShell.Core.Get-Module).
 
 ## How to Find the Commands in a Module
 
@@ -165,7 +166,7 @@ Get-Command -Module BitsTransfer
 ```
 
 For more information about the `Get-Command` cmdlet, see
-[Get-Command](../Get-Command.md).
+[Get-Command](xref:Microsoft.PowerShell.Core.Get-Command).
 
 ## How to Get Help for the Commands in a Module
 
@@ -194,8 +195,8 @@ To download and install the help files for the commands in a module, type:
 Update-Help -Module <module-name>
 ```
 
-For more information, see [Get-Help](../Get-Help.md) and
-[Update-Help](../Update-Help.md).
+For more information, see [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) and
+[Update-Help](xref:Microsoft.PowerShell.Core.Update-Help).
 
 ## How to Import a Module
 
@@ -248,7 +249,7 @@ Import-Module C:\ps-test\TestCmdlets.dll
 ```
 
 For more information about adding modules to your session, see
-[Import-Module](../Import-Module.md).
+[Import-Module](xref:Microsoft.PowerShell.Core.Import-Module).
 
 ## How to Import a Module into Every Session
 
@@ -279,48 +280,49 @@ Remove-Module BitsTransfer
 
 Removing a module reverses the operation of importing a module. Removing
 a module does not uninstall the module. For more information, see
-[Remove-Module](../Remove-Module.md).
+[Remove-Module](xref:Microsoft.PowerShell.Core.Remove-Module).
 
 ## Module and DSC Resource Locations, and PSModulePath
 
-The following are default locations for PowerShell modules. Starting in
-PowerShell 4.0, with the introduction of DSC, a new default module and DSC
-resource folder was introduced. For more information about DSC, see
-[about_DesiredStateConfiguration](/powershell/module/Microsoft.PowerShell.Core/About/about_DesiredStateConfiguration).
+The `$env:PSModulePath` environment variable contains a list of folder
+locations that are searched to find modules and resources.
 
-- System: `$PSHOME\Modules` or
-  (`$env:windir\System32\WindowsPowerShell\v1.0\Modules`)
-  System modules are those that ship with Windows and PowerShell.
+By default, the effective locations assigned to `$env:PSModulePath` are:
 
-  Starting in PowerShell 4.0, when PowerShell Desired State Configuration
-  (DSC) was introduced, DSC resources that are included with PowerShell are
-  also stored in `$PSHOME\Modules`, in the
+- System-wide locations: `$PSHOME\Modules`
+
+  These folders contain modules that ship with Windows and PowerShell.
+
+  DSC resources that are included with PowerShell are stored in the
   `$PSHOME\Modules\PSDesiredStateConfiguration\DSCResources` folder.
 
-- Current user: `$HOME\Documents\WindowsPowerShell\Modules`
-  (`$env:UserProfile\Documents\WindowsPowerShell\Modules`)
+- User-specific modules: These are modules installed by the user in the
+  user's scope. `Install-Module` has a **Scope** parameter that allows you to
+  specify whether the module is installed for the current user or for all
+  users. For more information, see
+  [Install-Module](xref:PowerShellGet.Install-Module).
 
-  or
+  The user-specific **CurrentUser** location on Windows is the
+  `PowerShell\Modules` folder located in the **Documents** location in your
+  user profile. The specific path of that location varies by version of
+  Windows and whether or not you are using folder redirection. Microsoft
+  OneDrive can also change the location of your **Documents** folder.
 
-  `$HOME\My Documents\WindowsPowerShell\Modules`
-  (`$env:UserProfile\My Documents\WindowsPowerShell\Modules`)
+  By default, on Windows 10, that location is
+  `$HOME\Documents\PowerShell\Modules`. On Linux or Mac, the **CurrentUser**
+  location is `$HOME/.local/share/powershell/Modules`.
 
-  This is the location for user-added modules prior to PowerShell 4.0.
+  > [!NOTE]
+  > You can verify the location of your **Documents** folder using the
+  > following command: `[Environment]::GetFolderPath('MyDocuments')`.
 
-In PowerShell 4.0 and later releases of PowerShell, user-added modules and DSC
-resources are stored in `C:\Program Files\WindowsPowerShell\Modules`. Modules
-and DSC resources in this location are accessible by all users of the
-computer. This change was required because the DSC engine runs as local
-system, and could not access user-specific paths, such as
-`$home\Documents\WindowsPowerShell\Modules`.
+- The **AllUsers** location is `$env:PROGRAMFILES\WindowsPowerShell\Modules` on
+  Windows. On Linux or Mac the modules are stored at
+  `/usr/local/share/powershell/Modules`.
 
-Starting in PowerShell 5.0, with the addition of the PowerShellGet module, and
-the [PowerShell Gallery](https://www.powershellgallery.com) of community and
-Microsoft-created resources, the `Install-Module` command installs modules and
-DSC resources to `C:\Program Files\WindowsPowerShell\Modules` by default.
-
-Note: To add or change files in the `$env:Windir\System32` directory, start
-PowerShell with the "Run as administrator" option.
+> [!NOTE]
+> To add or change files in the `$env:Windir\System32` directory, start
+> PowerShell with the **Run as administrator** option.
 
 You can change the default module locations on your system by changing the
 value of the **PSModulePath** environment variable, `$Env:PSModulePath`. The
@@ -499,6 +501,7 @@ are loaded automatically on first-use.
 > commands are packaged in snap-ins.
 
 The following modules (or snap-ins) are installed with PowerShell.
+
 * CimCmdlets
 * Microsoft.PowerShell.Archive
 * Microsoft.PowerShell.Core
@@ -522,12 +525,12 @@ about_DesiredStateConfiguration
 
 [about_Group_Policy_Settings](about_Group_Policy_Settings.md)
 
-[Get-Command](../Get-Command.md)
+[Get-Command](xref:Microsoft.PowerShell.Core.Get-Command)
 
-[Get-Help](../Get-Help.md)
+[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help)
 
-[Get-Module](../Get-Module.md)
+[Get-Module](xref:Microsoft.PowerShell.Core.Get-Module)
 
-[Import-Module](../Import-Module.md)
+[Import-Module](xref:Microsoft.PowerShell.Core.Import-Module)
 
-[Remove-Module](../Remove-Module.md)
+[Remove-Module](xref:Microsoft.PowerShell.Core.Remove-Module)

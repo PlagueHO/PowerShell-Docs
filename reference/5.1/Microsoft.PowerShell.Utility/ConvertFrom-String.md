@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=822386
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-string?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-String
 ---
@@ -255,7 +255,7 @@ The delimiter is ultimately used in a call to the **Split** method of the type
 `[System.Text.RegularExpressions.RegularExpression]`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByDelimiter
 Aliases: DEL
 
@@ -271,7 +271,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet includes an extent text property that is removed by default.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: TemplateParsing
 Aliases: IE
 
@@ -287,7 +287,7 @@ Accept wildcard characters: False
 Specifies strings received from the pipeline, or a variable that contains a string object.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -314,7 +314,7 @@ names. If you do not specify enough property names to name all fields, PowerShel
 assigns numerical property names to any properties that are not named: **P1**, **P2**, etc.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByDelimiter
 Aliases: PN
 
@@ -332,7 +332,7 @@ which this cmdlet assigns strings. The syntax of a template field specification 
 `{[optional-typecast]<name>:<example-value>}`.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: TemplateParsing
 Aliases: TC
 
@@ -359,7 +359,7 @@ multiple records. This avoids extracting multiple properties into a single recor
 ```
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: TemplateParsing
 Aliases: TF
 
@@ -377,7 +377,7 @@ This makes the algorithm learning process faster.
 To use this parameter, you must also specify a template file with the **TemplateFile** parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: TemplateParsing
 Aliases: UT
 

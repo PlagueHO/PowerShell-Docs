@@ -1,11 +1,12 @@
 ---
-ms.date:  09/19/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=2096456
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Test-Json
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+Locale: en-US
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 09/19/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/test-json?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Test-Json
 ---
 
 # Test-Json
@@ -22,7 +23,7 @@ Test-Json [-Json] <string> [[-Schema] <string>] [<CommonParameters>]
 ## DESCRIPTION
 
 The `Test-Json` cmdlet tests whether a string is a valid JavaScript Object Notation (JSON) document
-and can optionally very that JSON document against a provided schema.
+and can optionally verify that JSON document against a provided schema.
 
 The verified string can then be used with the `ConvertFrom-Json` cmdlet convert a JSON-formatted
 string to a JSON object, which is easily managed in PowerShell or sent to another program or web
@@ -114,7 +115,7 @@ command or expression that gets the string. You can also pipe a string to `Test-
 The **Json** parameter is required.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -134,7 +135,7 @@ input conforms to the provided Schema.
 For more information, see [JSON Schema](https://json-schema.org/).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

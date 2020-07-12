@@ -1,9 +1,10 @@
 ---
-ms.date:  12/01/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Remote_FAQ
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 12/01/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_faq?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Remote_FAQ
 ---
 # About Remote FAQ
 
@@ -272,7 +273,6 @@ Get-Help * -Parameter ThrottleLimit
 Get-Command -ParameterName ThrottleLimit
 ```
 
-
 ### IS THE OUTPUT OF REMOTE COMMANDS DIFFERENT FROM LOCAL OUTPUT?
 
 When you use PowerShell locally, you send and receive "live" .NET
@@ -519,6 +519,6 @@ Set-Item WSMan:\localhost\Client\TrustedHosts -Value Server01
 
 [about_Remote_Variables](about_Remote_Variables.md)
 
-[Invoke-Command](../Invoke-Command.md)
+[Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
 
-[New-PSSession](../New-PSSession.md)
+[New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)

@@ -1,10 +1,10 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 08/23/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821483
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-help?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Help
 ---
@@ -26,36 +26,36 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
 ### DetailedView
 
 ```
-Get-Help [[-Name] <String>] -Detailed [-Path <String>] [-Category <String[]>]
- [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
+ [-Functionality <String[]>] [-Role <String[]>] -Detailed [<CommonParameters>]
 ```
 
 ### Examples
 
 ```
-Get-Help [[-Name] <String>] -Examples [-Path <String>] [-Category <String[]>]
- [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
+ [-Functionality <String[]>] [-Role <String[]>] -Examples [<CommonParameters>]
 ```
 
 ### Parameters
 
 ```
-Get-Help [[-Name] <String>] -Parameter <String> [-Path <String>] [-Category <String[]>]
- [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
+ [-Functionality <String[]>] [-Role <String[]>] -Parameter <String> [<CommonParameters>]
 ```
 
 ### Online
 
 ```
-Get-Help [[-Name] <String>] -Online [-Path <String>] [-Category <String[]>] [-Component <String[]>]
- [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
+ [-Functionality <String[]>] [-Role <String[]>] -Online [<CommonParameters>]
 ```
 
 ### ShowWindow
 
 ```
-Get-Help [[-Name] <String>] -ShowWindow [-Path <String>] [-Category <String[]>]
- [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
+ [-Functionality <String[]>] [-Role <String[]>] -ShowWindow [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -345,7 +345,7 @@ The acceptable values for this parameter are as follows:
 - Configuration
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 Accepted values: Alias, Cmdlet, Provider, General, FAQ, Glossary, HelpFile, ScriptCommand, Function, Filter, ExternalScript, All, DefaultHelp, Workflow, DscResource, Class, Configuration
@@ -364,7 +364,7 @@ Wildcard characters are permitted. This parameter has no effect on displays of c
 (**About_**) help.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -382,7 +382,7 @@ when the help files are installed on the computer. It has no effect on displays 
 (**About_**) help.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: DetailedView
 Aliases:
 
@@ -402,7 +402,7 @@ This parameter is effective only when the help files are installed on the comput
 on displays of conceptual (**About_**) help.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Examples
 Aliases:
 
@@ -422,7 +422,7 @@ This parameter is effective only when the help files are installed on the comput
 on displays of conceptual (**About_**) help.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: AllUsersView
 Aliases:
 
@@ -439,7 +439,7 @@ Displays help for items with the specified functionality. Enter the functionalit
 characters are permitted. This parameter has no effect on displays of conceptual (**About_**) help.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -472,7 +472,7 @@ The names of conceptual articles, such as `about_Objects`, must be entered in En
 non-English versions of PowerShell.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -490,11 +490,11 @@ for cmdlet, function, workflow, and script help articles. You can't use the **On
 with `Get-Help` in a remote session.
 
 For information about supporting this feature in help articles that you write, see [about_Comment_Based_Help](./About/about_Comment_Based_Help.md),
-and [Supporting Online Help](/powershell/developer/module/supporting-online-help), and
-[Writing Help for PowerShell Cmdlets](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets).
+and [Supporting Online Help](/powershell/scripting/developer/module/supporting-online-help), and
+[Writing Help for PowerShell Cmdlets](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Online
 Aliases:
 
@@ -511,7 +511,7 @@ Displays only the detailed descriptions of the specified parameters. Wildcards a
 parameter has no effect on displays of conceptual (**About_**) help.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Parameters
 Aliases:
 
@@ -541,7 +541,7 @@ help articles.
 For more information about PowerShell providers, see [about_Providers](./About/about_Providers.md).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -562,7 +562,7 @@ help files based on the value of this parameter. This parameter has no effect on
 cmdlets.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -585,7 +585,7 @@ workflows, scripts) and conceptual **About** articles. It does not support provi
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ShowWindow
 Aliases:
 
@@ -673,10 +673,10 @@ following fields:
 
 [Get-Command](Get-Command.md)
 
-[Supporting Updatable Help](/powershell/developer/module/supporting-updatable-help)
+[Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help)
 
 [Update-Help](Update-Help.md)
 
-[Writing Comment-Based Help Topics](/powershell/developer/help/writing-comment-based-help-topics)
+[Writing Comment-Based Help Topics](/powershell/scripting/developer/help/writing-comment-based-help-topics)
 
-[Writing Help for PowerShell Cmdlets](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets)
+[Writing Help for PowerShell Cmdlets](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets)
